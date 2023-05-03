@@ -1,11 +1,16 @@
 title: Carla A. Rudder # your name (or website title) here
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
+logo: "/images/Head Shot u.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+  I'm a data-driven professional with a strong background in data analysis, consulting, and teaching. 
+  I specialize in SQL, R programming, Python, and Tableau to clean, organize, and visualize data for impactful insights. 
+  My experience spans across various industries, including education, research, and market analysis. 
   <br><br>
-  Second description 
+  BSc Applied Mathematics - North Carolina State University
+  MSc Mathematics Ed (Financial Mathematics concentration) - Florida State University
+  PhD Mathematics Ed (Mathematical Problem Solving) - Florida State University
+  Applied Data Science - Professional Ed - Massachusets Institute of Technology
   <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/carudder/">View My LinkedIn Profile</a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
