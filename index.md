@@ -2,17 +2,17 @@
 
 ---
 
-### Category Name 1 
+### Data Analysis for Business Recommendations 
 
-[Project 1 Title](/sample_page)
+[FoodHub](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Math Admission Requirements Review](/pdf/sample_presentation.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[6-Month Electric Consumption](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
