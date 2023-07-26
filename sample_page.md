@@ -39,7 +39,7 @@ df.info()
 - There are 4 features (columns) which are int64
 - There is 1 feature (column), cost_of_the_order, which is float64
 - There are 3 features (columns) that are objects; however, the feature 'rating' should be an int64 or float64, so this should be investigated further.
-- Some 'ratings' were not given, therefore, the data type is labeled an object.
+- Some 'ratings' were not given; therefore, the data type is labeled an object.
 - The ratings which were not given either have to be discarded, or the average of the rating for that cuisine or restaurant should be given.
 
 *Missing values in the data*
@@ -157,7 +157,7 @@ plt.ylabel('count')
 #display plot
 plt.show()
 ```
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
 
 ### 4. Provide a basis for further data collection through surveys or experiments
 
