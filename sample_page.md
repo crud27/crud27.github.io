@@ -85,7 +85,78 @@ df.groupby('rating').count()
 ### 3. Exploratory Data Analysis (EDA)
 **Univariate Analysis**
 Explore all the variables and provide observations on their distributions. (Generally, histograms, boxplots, countplots, etc. are used for univariate exploration.)
+```javascript
+#Countplots for the qualitative variables
+# displaying the 'restaurant_name' using a countplot
+plt.figure(figsize = (25, 5))
+sns.countplot(df.restaurant_name, order = df.restaurant_name.value_counts().index)
 
+#add a title to the countplot
+plt.title('Countplot of Restaurants by Name')
+
+#rotate the xtick labels for readability
+plt.xticks(rotation = 90)
+
+# displaying the 'cuisine_type' using a countplot
+plt.figure(figsize = (25, 5))
+sns.countplot(df.cuisine_type, order = df.cuisine_type.value_counts().index)
+
+#add a title to the countplot
+plt.title('Countplot of cuisine_type')
+
+#rotate the xtick labels for readability
+plt.xticks(rotation = 45)
+
+# displaying the 'day_of_the_week' using a countplot
+plt.figure(figsize = (25, 5))
+sns.countplot(df.day_of_the_week, order = df.day_of_the_week.value_counts().index)
+
+#add a title to the countplot
+plt.title('Countplot of day_of_the_week')
+
+#set of boxplots of the quantitative variables
+fig, axs = plt.subplots(1, 3)
+#Boxplot for the cost_of_the_order
+axs[0].boxplot(df['cost_of_the_order'])
+axs[0].set_title('cost_of_the_order')
+
+#Boxplot for the food_preparation_time
+axs[1].boxplot(df['food_preparation_time'])
+axs[1].set_title('food_preparation_time')
+
+#Boxplot for the delivery_time
+axs[2].boxplot(df['delivery_time'])
+axs[2].set_title('delivery_time')
+
+#adjust spacing for readability
+fig.subplots_adjust(left=0.08, right=2, bottom=0.05, top=2,
+                    hspace=0.5, wspace=0.5)
+
+# set of distribution plots for the quantitative variables
+# distribution plot for the cost_of_the_order
+plt.figure(figsize = (15, 5))
+sns.displot(df.cost_of_the_order, kde=True)
+plt.title('Distribution of cost_of_the_order')
+plt.xlabel('cost_of_the_order')
+plt.ylabel('count')
+          
+# distribution plot for the food_preparation_time
+plt.figure(figsize = (15, 5))
+sns.displot(df.food_preparation_time, kde=True)
+plt.title('Distribution of food_preparation_time')
+plt.xlabel('food_preparation_time')
+plt.ylabel('count')
+          
+# distribution plot for the delivery_time
+plt.figure(figsize = (15, 5))
+sns.displot(df.delivery_time, kde=True)
+plt.title('Distribution of delivery_time')
+plt.xlabel('delivery_time')
+plt.ylabel('count')
+
+#display plot
+plt.show()
+```
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ### 4. Provide a basis for further data collection through surveys or experiments
