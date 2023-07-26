@@ -299,10 +299,26 @@ sns.heatmap(corr, annot=True)
 
 plt.show()
 ```
-**Countplot of Restaurants by Name**
-<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
-
-
+**Pairplot**
+<img src="images/2_1_pairplot.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Day of the Week**
+<img src="images/2_3cuisine type and the day_of_the_week.png?raw=true"/>
+**Cuisine Type and Rating**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Cuisine Type and Cost of Order**
+<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
 ### 4. Provide a basis for further data collection through surveys or experiments
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
