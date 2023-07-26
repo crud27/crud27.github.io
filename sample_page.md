@@ -313,12 +313,49 @@ plt.show()
 <img src="images/2_6_cuisine type and the delivery_time.png?raw=true"/>
 **Cost of Order and Day of the Week**
 <img src="images/2_7_cost_of_the_order and the day_of_the_week.png?raw=true"/>
-**Cuisine Type and Cost of Order**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
-**Cuisine Type and Cost of Order**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
-**Cuisine Type and Cost of Order**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+**Food Preparation Time and Day of the Week**
+<img src="images/2_8_food_preparation_time and the day_of_the_week.png?raw=true"/>
+**Delivery Time and Day of the Week**
+<img src="images/2_9_day_of_the_week_and_delivery_time.png?raw=true"/>
+**Rating and Cost of Order & Heatmap**
+<img src="images/2_10_11cost_of_the_order and the rating.png?raw=true"/>
+
+*Determine the number of restaurants with a rating count of more than 50 and with an average rating be greater than 4*
+```javascript
+# create a dataframe with the specific ratings for each restaurant 
+all_ratings_by_restaurant = pd.crosstab(df['restaurant_name'],df['rating'] )
+
+# need to drop the 'not given' responses in order to sum the total ratings for each restaurant
+ratings_by_restaurant = all_ratings_by_restaurant.drop('Not given', axis=1)
+
+# find the total number of reveiws each restaurant received
+total_reviews = ratings_by_restaurant['total_reviews'] = ratings_by_restaurant.sum(axis=1)
+
+# find the average rating for each restaurant
+column = list(ratings_by_restaurant.columns)
+temp_lst = ['3', '4', '5']
+
+for column in temp_lst:
+    ratings_by_restaurant['average_rating'] = (ratings_by_restaurant['3'] * 3 + ratings_by_restaurant['4'] * 4 + ratings_by_restaurant['5'] * 5)/ratings_by_restaurant['total_reviews']
+    
+# sort the total_reviews in descending order
+ratings_by_restaurant.sort_values(by = ['total_reviews'], ascending = False)
+
+temp_lst2 = ['total_reviews', 'average_rating']
+
+# use a loop to go through all of the objects to determine if the restaurant has 50 or more reviews and an average of greater than 4.0
+for column in temp_lst2:
+    ratings_by_restaurant['More_50'] = ratings_by_restaurant['total_reviews'] >= 50
+    ratings_by_restaurant['More_4'] = ratings_by_restaurant['average_rating'] >= 4
+
+# determine which restaurants meet the criteria 
+promotion_restaurants = ratings_by_restaurant[(ratings_by_restaurant['More_50'] == True) & (ratings_by_restaurant['More_4'] == True)]
+
+# display the restaurants which meet the criteria
+promotion_restaurants
+```
+
+
 ### 4. Provide a basis for further data collection through surveys or experiments
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
