@@ -159,18 +159,149 @@ plt.show()
 ```
 **Countplot of Restaurants by Name**
 <img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+
 **Countplot of Cuisine Type**
 <img src="images/2_Countplot_of_cuisine_type.png?raw=true"/>
+
 **Countplot of Day of Week**
 <img src="images/3_Countplot_of_day_of_week.png?raw=true"/>
+
 **Box Plots**
 <img src="images/4_boxplots.png?raw=true"/>
+
 **Distribution of Cost of the Order**
 <img src="images/5_distribution_of_cost_of_the_order.png?raw=true"/>
+
 **Distribution of Food Preparation Time**
 <img src="images/6_distribution_of_food_prep_time.png?raw=true"/>
+
 **Distribution of Delivery Time**
 <img src="images/7_distribution_of_delivery_time.png?raw=true"/>
+
+*Top 5 restaurants in terms of the number of orders received*
+```javascript
+#list the top 5 restaurants by the number of orders received
+num_orders_per_restaurant = df.groupby('restaurant_name').count()
+top_5_restaurants = num_orders_per_restaurant.sort_values(by = ['order_id'], ascending = False).head(5)
+top_5_restaurants
+```
+**Observations:**
+The top 5 restaurants, ranked by the number of orders received, are:
+- Shake Shack - 219 orders
+- The Meatball Shop - 132 orders
+- Blue Ribbon Sushi - 119 orders
+- Blue Ribbon Fried Chicken - 96 orders
+- Parm - 68 orders
+
+*Most popular cuisine on weekends*
+```javascript
+# find the most popular cuisines on the weekends
+cuisine_by_day_of_week = pd.crosstab(df['cuisine_type'],df['day_of_the_week'])
+popular_cuisine_weekend = cuisine_by_day_of_week.sort_values(by = ['Weekend'] , ascending = False)
+popular_cuisine_weekend
+```
+**Observations:**
+The most popular top 5, cuisines on the weekend are:
+- American - 415 orders
+- Japanese - 335 orders
+- Italian - 207 orders
+- Chinese - 163 orders
+- Mexican - 53 orders
+
+*Percentage of the orders cost more than 20 dollars*
+```javascript
+#find the number of orders greater than 20usd
+greater_than_20usd = df['cost_of_the_order'] > 20
+num_greater_than_20usd = greater_than_20usd.sum()
+
+# to find the percentage of orders greater than 20usd, you will take the (number of orders greater than 20usd / total number of orders)*100
+total_orders = df['cost_of_the_order'].count()
+
+percent_orders_greater_20usd = (num_greater_than_20usd/total_orders)*100
+
+print('The number of orders greater than 20usd is:', num_greater_than_20usd)
+print('The number of total number of orders:', total_orders)
+print('The percent of orders greater than 20usd is:', percent_orders_greater_20usd)
+```
+**Observations:**
+- The number of orders greater than 20usd is: 555
+- The number of total number of orders: 1898
+- The percent of orders greater than 20usd is: 29.24130663856691
+
+*Mean order delivery time*
+```javascript
+# find the mean order delivery time
+mean_delivery_time = df['delivery_time'].mean()
+
+print ('The mean order delivery time is:', mean_delivery_time)
+```
+**Observations:**
+- The mean order delivery time is approximately 24 minutes
+
+*The top 3 most frequent customers*
+```javascript
+#list the top 3 most frequent customers
+freq_customers = df.groupby('customer_id').count()
+top_3_customers = freq_customers.sort_values(by = ['order_id'], ascending = False).head(3)
+top_3_customers
+```
+**Observations:**
+- The three most frequent customers are:
+
+| Customer_id | number of orders | 
+----------------------------------
+|   52832     |        13        | \
+|   47440     |        10        | \
+|   83287     |         9        | 
+
+**Multivariate Analysis**
+Perform a multivariate analysis to explore relationships between the important variables in the dataset.
+```javascript
+# create a pair plot to see if there are any relationships 
+sns.pairplot(df)
+
+
+# identify relationships between the cuisine type and the cost of the order
+df.hist(by='cuisine_type',column = 'cost_of_the_order', figsize=(20,30))
+
+# identify relationships between the cuisine type and the day_of_the_week
+df.hist(by='cuisine_type',column = 'day_of_the_week', figsize=(20,30))
+
+# identify relationships between the cuisine type and the rating
+df.hist(by='cuisine_type',column = 'rating', figsize=(20,30))
+
+# identify relationships between the cuisine type and the food_preparation_time
+df.hist(by='cuisine_type',column = 'food_preparation_time', figsize=(20,30))
+
+# identify relationships between the cuisine type and the delivery_time
+df.hist(by='cuisine_type',column = 'delivery_time', figsize=(20,30))
+
+# identify relationships between the cost_of_the_order and the day_of_the_week
+df.hist(by='day_of_the_week',column = 'cost_of_the_order', figsize=(10,15))
+
+# identify relationships between the food_preparation_time and the day_of_the_week
+df.hist(by='day_of_the_week',column = 'food_preparation_time', figsize=(10,15))
+
+# identify relationships between the food_preparation_time and the day_of_the_week
+df.hist(by='day_of_the_week',column = 'delivery_time', figsize=(10,15))
+
+# identify relationships between the cost_of_the_order and the rating
+df.hist(by='rating',column = 'cost_of_the_order', figsize=(10,15))
+
+
+
+# find the correlations between the features
+corr = df.corr()
+corr
+
+# create the heatmap of the correlation between the features
+sns.heatmap(corr, annot=True)
+
+plt.show()
+```
+**Countplot of Restaurants by Name**
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+
 
 ### 4. Provide a basis for further data collection through surveys or experiments
 
