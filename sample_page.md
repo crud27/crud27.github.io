@@ -306,11 +306,11 @@ plt.show()
 **Cuisine Type and Day of the Week**
 <img src="images/2_3cuisine type and the day_of_the_week.png?raw=true"/>
 **Cuisine Type and Rating**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
-**Cuisine Type and Cost of Order**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
-**Cuisine Type and Cost of Order**
-<img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
+<img src="images/2_4_cuisine type and the rating.png?raw=true"/>
+**Cuisine Type and Food Preparation Time**
+<img src="images/2_5_cuisine type and the food_preparation_time_png?raw=true"/>
+**Cuisine Type and Delivery Time**
+<img src="images/2_6_cuisine type and the delivery_time.png?raw=true"/>
 **Cuisine Type and Cost of Order**
 <img src="images/2_2_cuisine_type_and_cost_of_order.png?raw=true"/>
 **Cuisine Type and Cost of Order**
