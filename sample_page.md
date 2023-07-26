@@ -157,16 +157,21 @@ plt.ylabel('count')
 #display plot
 plt.show()
 ```
+**Countplot of Restaurants by Name**
 <img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
-
+**Countplot of Cuisine Type**
 <img src="images/2_Countplot_of_cuisine_type.png?raw=true"/>
+**Countplot of Day of Week**
 <img src="images/3_Countplot_of_day_of_week.png?raw=true"/>
-<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
-<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
-<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
-<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+**Box Plots**
+<img src="images/4_boxplots.png?raw=true"/>
+**Distribution of Cost of the Order**
+<img src="images/5_distribution_of_cost_of_the_order.png?raw=true"/>
+**Distribution of Food Preparation Time**
+<img src="images/6_distribution_of_food_prep_time.png?raw=true"/>
+**Distribution of Delivery Time**
+<img src="images/7_distribution_of_delivery_time.png?raw=true"/>
 
-2_Countplot_of_cuisine_type.png
 ### 4. Provide a basis for further data collection through surveys or experiments
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
