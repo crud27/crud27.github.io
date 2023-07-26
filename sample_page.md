@@ -159,6 +159,14 @@ plt.show()
 ```
 <img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
 
+<img src="images/2_Countplot_of_cuisine_type.png?raw=true"/>
+<img src="images/3_Countplot_of_day_of_week.png?raw=true"/>
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+<img src="images/1_Countplot_of_restaurants_by_name.png?raw=true"/>
+
+2_Countplot_of_cuisine_type.png
 ### 4. Provide a basis for further data collection through surveys or experiments
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
