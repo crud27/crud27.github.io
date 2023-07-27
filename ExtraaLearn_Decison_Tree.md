@@ -27,27 +27,65 @@ You, as a data scientist at ExtraaLearn, have been provided the leads data to:
 
 Utilized Python to analyze the data set
 
-Data Description
+Data Overview
+- Observations
+- Sanity checks
+*View the first and last five rows of the data*
+```javascript
+#check that the data is loaded and look at the data frame
+df.head()
+```
+```javascript
+# check the data last five rows
+df.tail()
+```
+
 *Rows and columns are present in the data* - 
 ```javascript
 # use the shape method to determine the number of rows and columns of the data
 df.shape
 ```
 **Observations:**
-(1898, 9)
+(4612, 15)
 
 *Datatypes of the different columns in the dataset*
 ```javascript
 # Use info() to print a concise summary of the DataFrame
 df.info()
 ```
+```javascript
+# find number of unique IDs
+df.ID.nunique()
+```
 **Observations:**
-- There are 4 features (columns) which are int64
-- There is 1 feature (column), cost_of_the_order, which is float64
-- There are 3 features (columns) that are objects; however, the feature 'rating' should be an int64 or float64, so this should be investigated further.
-- Some 'ratings' were not given; therefore, the data type is labeled an object.
-- The ratings which were not given either have to be discarded, or the average of the rating for that cuisine or restaurant should be given.
+4612
+- There are 4612 unique IDs. Each row is a unique ID, therefore, this column doesn't add value and can be dropped
+```javascript
+# drop the ID column
+df = df.drop(['ID'], axis = 1)
+```
+```javascript
+# look at the first five rows again
+df.head()
+```
+```javascript
+df.shape
+```
+**Observations:**
+(4612, 14)
 
+```javascript
+df.info()
+```
+**Observations**
+- There are 4612 rows and 14 columns
+- There is 1 float types (page_views_per_visit)
+- There are 4 integer types (age, website_visits, time_spent_on_website,and status(0 not converted or 1 converted)
+- There are 9 object types
+- There are no null values in the data
+- There are 4612 unique IDs. Each row is a unique ID therefore this column did not add value and was dropped
+
+**START HERE WITH EDA**
 *Missing values in the data*
 ```javascript
 # determine if there are missing values
