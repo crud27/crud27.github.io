@@ -10,7 +10,9 @@
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
-[Math Admission Requirements Review](/pdf/sample_presentation.pdf)
+[ExtraaLearn](/ExtraaLearn_Decision_Tree.md) <br><br>
+[ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
+[ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
