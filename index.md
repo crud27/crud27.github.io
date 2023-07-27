@@ -5,6 +5,8 @@
 ### Data Analysis for Business Recommendations 
 
 [FoodHub](/food_hub.md)
+[FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf)
+[FoodHub Jupyter Notebook]
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
