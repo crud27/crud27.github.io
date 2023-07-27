@@ -10,6 +10,7 @@
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
+### Practical Data Science - Decision Tree and Random Forest Models for Business Recommendations
 [ExtraaLearn](/ExtraaLearn_Decision_Tree.md) <br><br>
 [ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
 [ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
