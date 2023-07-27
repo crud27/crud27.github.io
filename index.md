@@ -5,7 +5,7 @@
 ### Data Analysis for Business Recommendations 
 
 [FoodHub](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/Title Page.jpg?raw=true"/>
 
 ---
 [Math Admission Requirements Review](/pdf/sample_presentation.pdf)
