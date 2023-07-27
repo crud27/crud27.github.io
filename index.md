@@ -4,7 +4,7 @@
 
 ### Data Analysis for Business Recommendations 
 
-[FoodHub](/food_hub)
+[FoodHub](/food_hub.md)
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
