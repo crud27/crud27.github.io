@@ -4,7 +4,7 @@
 
 ### Data Analysis for Business Recommendations 
 - Python is used to analyze and visualize data in order to make business recommendations
-- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn
+- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 
 [FoodHub](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
