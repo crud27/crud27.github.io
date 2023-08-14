@@ -297,3 +297,561 @@ The color represents if the visitor was converted to a customer or not.  Orange 
 There were no other major trends identified by the pairplot.
 
 ### <code>age</code>
+```javascript
+#visualize what the age means for creating a paying customer
+plt.figure(figsize = (15, 10))
+sns.boxplot(df["status"], df["age"])
+plt.show()
+```
+
+### <code>current_occupation</code>
+Analyze the data based on the <code>current_occupation</code>.
+- Identify the number of visitors based on <code>current_occupation</code>
+- Identify the number of visitors which where converted based on <code>current_occupation</code>
+- Look at the age of the visitors based on their <code>current_occupation</code>
+
+```javascript
+# visualize the current occupations of the visitors based on conversion
+plt.figure(figsize = (15, 10))
+sns.countplot(x = 'current_occupation', hue = 'status', data = df)
+plt.show()
+```
+
+```javascript
+#look at the age of the visitor by current occupation
+df.groupby(["current_occupation"])["age"].describe()
+```
+
+```javascript
+# box plots of the age of the visitor grouped by the current occupation
+plt.figure(figsize = (10, 5))
+sns.boxplot(df["current_occupation"], df["age"])
+plt.show()
+```
+
+### <code>first_interactions</code>
+
+```javascript
+# visualize the first_interactions of the visitors based on conversion
+plt.figure(figsize = (15, 10))
+sns.countplot(x = 'first_interaction', hue = 'status', data = df)
+plt.show()
+```
+
+### <code>time_spent_on_website</code>
+
+```javascript
+# visualize the time_spent_on_website of the visitors based on conversion
+plt.figure(figsize = (10, 5))
+sns.boxplot(df["status"], df["time_spent_on_website"])
+plt.show()
+```
+
+### <code>profile_completed</code>
+```javascript
+#visualize what the completion of the profile means for creating a paying customer
+plt.figure(figsize = (15, 10))
+sns.countplot(x = 'profile_completed', hue = 'status', data = df)
+plt.show()
+```
+
+### <code>referral</code>
+
+```javascript
+#visualize what a referral means for creating a paying customer
+plt.figure(figsize = (15, 10))
+sns.countplot(x = 'referral', hue = 'status', data = df)
+plt.show()
+```
+
+### Observations
+- <code>age</code>
+- Visitors that are higher in age have a higher propensity to become a paying customer.
+- <code>current_occupation</code>
+- Professionals visit the site more than unemployed and students.
+- Professionals are also more likely to become paying customers
+- Students are the youngest demographic with the mean being 21.  The max age of the student is <=25.  
+- The youngest professional is 25 (same age as the max student).
+- The professionals range from 25 - 60 years.  The Unemployed range from 32 to 63 years. 
+- <code>first_interactions</code>
+- More visitors first interaction is through the Mobile App, however there is a low conversion rate.  Those whose first interaction is through the website, have more which become customers.
+- <code>time_spent_on_website</code>
+-the blue represents those that did not convert to paying customers.  
+- It appears that the visitors which spend more time on the Website have more of a chance to convert to paying customers.
+- <code>profile_completed</code>
+- It appears that those that have a high completion have the highest tendency to become paying customers.
+- <code>referral</code>
+- There were very few referral (2%) however they have a high percentage of conversion to paying customers.  It might be fair to say that if a person is referred to ExtraaLearn they will become a paying customer.
+
+### Correlation Heat Map
+
+```javascript
+# Correlation matrix (no grouping)
+plt.figure(figsize=(15,10))
+sns.heatmap(df.corr().round(2),annot=True)
+plt.title('Correlation matrix of data',fontsize = 30)
+plt.show()
+```
+
+### Correlations Summary
+- The **highest correlation** is between <code>time_spent_on_website</code> and <code>status</code>
+- The other variables have no noticeable correlation
+- There is a negative correlation between the <code>website_visits</code> and <code>status</code>
+
+## Model Preparation
+**To determine which variable will lead to a visitor conversion to a paying customer**
+- 1. encode the data 
+- 2. check the shape of the training and testing sets
+  
+### Encoding the data
+
+# Separating the target variable and other variables
+```javascript
+# make a copy called X which is a dataframe with "status" column removed
+X = df.drop(columns = 'status') 
+# Y is a series containing the "status" (column)
+Y = df['status'] 
+```
+
+```javascript
+# Creating dummy variables, drop_first=True is used to avoid redundant variables
+#pd.get_dummies => working on X dataframe converts all categorical variables into binary 1(yes) / 0(no).
+X = pd.get_dummies(X, drop_first = True)
+```
+
+```javascript
+# Splitting the data into train (70%) and test (30%) sets
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.30, random_state = 1)
+```
+
+## Shape 
+- Check the shape of the training and test sets of data after manipulation
+```javascript
+print("Shape of the training set: ", X_train.shape)   
+print("Shape of the test set: ", X_test.shape)
+print("Percentage of classes in the training set:")
+print(y_train.value_counts(normalize = True))
+print("Percentage of classes in the test set:")
+print(y_test.value_counts(normalize = True))
+```
+
+
+## **Building Classification Models**
+
+### **Model evaluation criterion**
+
+**Model can make wrong predictions as:**
+
+1. Predicting a visitor will not convert to a paying customer but in reality, the visitor would convert to a paying customer.
+2. Predicting a visitor will convert to a paying customer but in reality, the visitor does not convert to a paying customer. 
+
+**Which case is more important?** 
+* False Negatives: Predicting a visitor will not convert to a paying customer but in reality, the visitor would convert to a paying customer:
+
+* If we predict that a visitor will not convert to a paying customer and would have converted to a paying customer, then the company has **lost on potential revenue for the company.**  (False Negative)
+
+* If we predict that a visitor will convert to a paying customer and they do not, the company has lost the resource of time and effort, where they could have been working with other potential customers.  (False Positive)  
+
+**The number of False Negatives should be minimized.**
+
+**How to reduce the losses?**
+
+* Want to maximize the <code>Recall</code> which will reduce the number of false negatives thereby not missing the visitors that will become paying customers
+
+```javascript
+# Function to print the classification report and get confusion matrix in a proper format
+def metrics_score(actual, predicted):
+    print(classification_report(actual, predicted))
+    cm = confusion_matrix(actual, predicted)
+    plt.figure(figsize = (8, 5))
+    sns.heatmap(cm, annot = True,  fmt = '.2f', xticklabels = ['Not Converted', 'Converted'], yticklabels = ['Not Converted', 'Converted'])
+    plt.ylabel('Actual')
+    plt.xlabel('Predicted')
+    plt.show()
+```
+
+## Building a Decision Tree model
+- Fit the decision tree classifier on the training data (use random_state=7)
+- Check the performance on both training and testing datasets (use metrics_score function)
+
+```javascript
+# Fitting the decision tree classifier on the training data
+d_tree =  DecisionTreeClassifier(random_state = 7)
+d_tree.fit(X_train, y_train)
+```
+
+- Let's check the performance on the training data
+
+## Model Performance evaluation and improvement
+
+```javascript
+# Checking performance on the training data
+y_pred_train1 = d_tree.predict(X_train)
+
+metrics_score(y_train, y_pred_train1)
+```
+
+#### Observations: 
+Reading confusion matrix (clockwise):
+
+- True Positive: Predicting the lead will not convert the booking and the lead does not convert.
+- False Positive: Predicting the lead will not convert and the lead is converted.
+- True Negative: Predicting the lead will convert to a paid customer and the lead does convert.
+- False Negative: Predicting the lead will convert to a paid customer but the lead does not convert.
+
+There is no error on the training set, i.e., each sample has been classified.
+
+The model this perfectly on the training data, it is likely overfitted.
+
+- Let's check the performance on test data to see if the model is overfitting.
+
+```javascript
+# Checking performance on the testing data
+y_pred_test1 = d_tree.predict(X_test)
+
+metrics_score(y_test, y_pred_test1)
+```
+
+### Observations:
+  
+- The model did not fit as well on the test data. Therefore the model is overfitting the training data. 
+
+- To reduce overfitting the model let's try hyperparameter tuning using GridSearchCV to find the optimal max_depth. We can tune some other hyperparameters as well.
+
+### **Decision Tree - Hyperparameter Tuning**
+
+We will use the class_weight hyperparameter with the value equal to {0: 0.3, 1: 0.7} which is **approximately** the opposite of the imbalance in the original data. 
+
+**This would tell the model that 1 is the important class here.**
+
+```javascript
+# Choose the type of classifier 
+d_tree_tuned = DecisionTreeClassifier(random_state = 7, class_weight = {0: 0.3, 1: 0.7})
+
+# Grid of parameters to choose from
+parameters = {'max_depth': np.arange(2, 10), #depth [2, 3, 4, 5, 6, 7, 8, 9]
+              'criterion': ['gini', 'entropy'], #use both gini and entropy to measure split quality
+              'min_samples_leaf': [5, 10, 20, 25] #minimum number of samples to be a leaf node
+             }
+
+# Type of scoring used to compare parameter combinations - recall score for class 1
+scorer = metrics.make_scorer(recall_score, pos_label = 1)
+
+# Run the grid search 
+grid_obj = GridSearchCV(d_tree_tuned, parameters, scoring = scorer, cv = 5) #=> chooses the best hyperparameters to use
+
+grid_obj = grid_obj.fit(X_train, y_train)
+
+# Set the classifier to the best combination of parameters
+d_tree_tuned = grid_obj.best_estimator_
+
+# Fit the best algorithm to the data
+d_tree_tuned.fit(X_train, y_train)
+```
+
+We have tuned the model and fit the tuned model on the training data. Now, let's check the model performance on the training and testing data.
+
+```javascript
+
+# Checking performance on the training data
+y_pred_train2 = d_tree_tuned.predict(X_train)
+​
+metrics_score(y_train, y_pred_train2)
+```
+
+### Observations
+- The performance on the training data has decreased which can be expected as we are trying not to overfit the training dataset. 
+
+**Let's check the model performance on the testing data**
+
+```javascript
+# Checking performance on the testing data
+y_pred_test2 = d_tree_tuned.predict(X_test)
+​metrics_score(y_test, y_pred_test2)
+```
+
+### Observations
+- The tuned model has an testing f1-score of 72% and is no longer overfitteing and generalizes well.
+- The model has increased its recall to 86% which is well above precision.
+- Would like to increase general accuracy while maintaining similar racall to precision ratio.
+
+**Let's visualize the tuned decision tree and observe the decision rules:**
+```javascript
+#Visualize the tree
+features = list(X.columns)
+plt.figure(figsize = (20, 20))
+tree.plot_tree(d_tree_tuned, feature_names = features, filled = True, fontsize = 9, node_ids = True, class_names = True)
+plt.show()
+```
+
+**Blue represents those who converted to paying customers class = y[1]**
+
+**Orange represents those who did not convert to paying customers class = y[0]**
+
+### Observations
+- First split is on <code>first_interaction</code> which implies it is one of the most important features (as observed in EDA). 
+- Visitors who first interacted with the website versus the mobile app had a much higher conversion rate.
+
+- Second split is on <code>time_spent_on_website</code> (highlighted in correlation heatmap). 
+- Visitors who spend more time on the website have a higher chance of converting to paying customers.
+
+- Third split is has <code>age</code> represented twice, under each prior branch. Therefore it seems to be of importance. It was noticed that visitors >= 25 had  a higher chance of converting to paying customers.
+- If a visitor is <25 and did not spend a lot of time on the website then they do not have a high chance of becoming paying customers.
+
+**Let's look at the feature importance** of the tuned decision tree model
+
+```javascript
+# Importance of features in the tree building
+print (pd.DataFrame(d_tree_tuned.feature_importances_, columns = ['Importance'], index = X_train.columns).sort_values(by = 'Importance', ascending = False))
+```
+
+```javascript
+# Plotting the feature importance
+importances = d_tree_tuned.feature_importances_
+indices = np.argsort(importances)
+plt.figure(figsize = (10, 10))
+plt.title('Feature Importances')
+plt.barh(range(len(indices)), importances[indices], color = 'blue', align = 'center')
+plt.yticks(range(len(indices)), [features[i] for i in indices])
+plt.xlabel('Relative Importance')
+plt.show()
+```
+
+### Observations
+- There are **5 features** which are of **importance** in order:
+<code>time_spent_on_website</code>
+<code>first_interaction</code> (Website)
+<code>profile_completed</code> (Medium)
+<code>age</code>
+<code>last_activity</code> (Website Activity)
+- The other features (variables) have no impact
+
+## Building a Random Forest model
+### Random Forest Classifier
+- Fit the random forest classifier on the training data (use random_state = 7)
+- Check the performance on both training and testing data (use metrics_score function)
+
+```javascript
+# Fitting the random forest tree classifier on the training data
+rf_estimator = RandomForestClassifier(random_state=7,criterion="entropy")
+rf_estimator.fit(X_train,y_train)
+```
+
+**Let's check the performance of the model on the training data**
+
+```javascript
+# Checking performance on the training data
+y_pred_train3 = rf_estimator.predict(X_train)
+metrics_score(y_train, y_pred_train3)
+```
+
+### Observations:
+
+- Similar to the decision tree, the random forest is giving a perfect/better performance on the training data.
+- The model is most likely overfitting to the training dataset as we observed for the decision tree.
+- Let's confirm this by checking its performance on the testing data
+
+**Let's check the performance on the testing data**
+
+```javascript
+# Checking performance on the testing data
+y_pred_test3 = rf_estimator.predict(X_test)
+
+metrics_score(y_test, y_pred_test3)
+```
+
+### Observations:
+
+- Comparatively, the results from the random forest classifier were decent on both training and testing data.
+- The model is back to being overfitted, not surprising given we are using an unrestrained random forest.
+- It has a higher F1_Score and precision on the testing data. The recall is lower, the opposite of our goal.
+
+**Let's see if we can get a better model by tuning the random forest classifier**
+
+## Random Forest Classifier - Hyperparameter Tuning Model
+
+- Let's try tuning some of the important hyperparameters of the Random Forest Classifier.
+- We will not tune the criterion hyperparameter as we know from hyperparameter tuning for decision trees that entropy is a better splitting criterion for this data.
+
+```javascript
+# Choose the type of classifier
+rf_estimator_tuned = RandomForestClassifier(criterion = "entropy", random_state = 7)
+
+# Grid of parameters to choose from
+parameters = {"n_estimators": [100, 110, 120],
+    "max_depth": [5, 6, 7],
+    "max_features": [0.8, 0.9, 1]
+             }
+
+# Type of scoring used to compare parameter combinations - recall score for class 1
+scorer = metrics.make_scorer(recall_score, pos_label = 1)
+
+# Run the grid search
+grid_obj = GridSearchCV(rf_estimator_tuned, parameters, scoring = scorer, cv = 5)
+
+grid_obj = grid_obj.fit(X_train, y_train)
+
+# Set the classifier to the best combination of parameters
+rf_estimator_tuned_base = grid_obj.best_estimator_
+```
+```javascript
+# Fitting the best algorithm to the training data
+rf_estimator_tuned.fit(X_train, y_train)
+```
+
+```javascript
+# Checking performance on the training data
+y_pred_train4 = rf_estimator_tuned_base.predict(X_train)
+​metrics_score(y_train, y_pred_train4)
+```
+
+### Observations:
+
+- We can see that after hyperparameter tuning, the model is performing poorly on the train data as well.
+- We can try adding some other hyperparameters and/or changing values of some hyperparameters to tune the model and see if we can get better performance.
+
+```javascript
+# Checking performance on the training data
+y_pred_test4 = rf_estimator_tuned_base.predict(X_test)
+
+metrics_score(y_test, y_pred_test4)
+```
+
+### Observations
+
+- While less than before the model is slightly overfitted 
+- The precision continues to be higher than the recall, something we will need to improve upon to surpass our tuned model.
+- The overall accuracy is slightly higher than that of our tuned model suggesting that using a random forest is the correct option.
+
+### Random Forest Classifier - Hyperparameter Tuning Model 2
+- Try and increase performance and prioritize recall over precision
+
+```javascript
+
+# Choose the type of classifier 
+rf_estimator_tuned = RandomForestClassifier(criterion = "entropy", random_state = 7)
+​
+# Grid of parameters to choose from
+parameters = {"n_estimators": [110, 120],
+    "max_depth": [6, 7],
+    "min_samples_leaf": [20, 25],
+    "max_features": [0.8, 0.9],
+    "max_samples": [0.9, 1],
+    "class_weight": ["balanced",{0: 0.3, 1: 0.7}]
+             }
+​
+# Type of scoring used to compare parameter combinations - recall score for class 1
+scorer = metrics.make_scorer(recall_score, pos_label = 1)
+​
+# Run the grid search on the training data using scorer=scorer and cv=5
+​
+grid_obj = GridSearchCV(rf_estimator_tuned, parameters, scoring = scorer, cv = 5)
+​
+grid_obj = grid_obj.fit(X_train, y_train)
+​
+# Save the best estimator to variable rf_estimator_tuned
+rf_estimator_tuned = grid_obj.best_estimator_
+​
+#Fit the best estimator to the training data
+rf_estimator_tuned.fit(X_train, y_train)
+```
+
+Let's check the performance of the tuned model
+
+```javascript
+# Checking performance on the training data
+y_pred_train5 = rf_estimator_tuned.predict(X_train)
+
+metrics_score(y_train, y_pred_train5)
+```
+
+Let's check the model performance on the test data
+
+```javascript
+# Checking performance on the test data
+y_pred_test5 = rf_estimator_tuned.predict(X_test)
+
+metrics_score(y_test, y_pred_test5)
+```
+
+### Observations:
+
+- The model is no longer overfitted with a testing f1-score of 76% (equal to to the training accuracy), meaning it will generalize well.
+- The recall is near the highest at 85%, well above the precision of 68%. This is inline with our goals of reducing false negatives.
+- While the recall of the tuned model is slightly higher at 86%, the model is overall weaker with an f1-score of 72%.
+
+## Feature Importance - Random Forest
+
+```javascript
+importances = rf_estimator_tuned.feature_importances_
+indices = np.argsort(importances)
+feature_names = list(X.columns)
+plt.figure(figsize = (12, 12))
+plt.title('Feature Importances')
+plt.barh(range(len(indices)), importances[indices], color = 'blue', align = 'center')
+plt.yticks(range(len(indices)), [feature_names[i] for i in indices])
+plt.xlabel('Relative Importance')
+plt.show()
+```
+
+### Observations:
+
+- Similar to the decision tree model, time spent on website, first_interaction_website, profile_completed, and age are the top four features that help distinguish between not converted and converted leads.
+- Unlike the decision tree, the random forest gives some importance to other variables like occupation, page_views_per_visit, as well. This implies that the random forest is giving importance to more factors in comparison to the decision tree.
+
+## Actionable Insights and Recommendations
+
+**Goal**
+
+The goal was to maximize the Recall value. The higher the Recall score, the greater chances of **minimizing the False Negatives**.  
+False Negatives: Predicting a visitor will not convert to a paying customer but in reality, the visitor would convert to a paying customer, therefore the business losing revenue.
+
+**Process**
+
+- The data was loaded into the Notebook.
+- An exploratory data analysis was performed to identify missing values, outliers, preparing the data for analysis, reviewing univariate and bivariate data analysis and visualizing the variables.   
+- A decision tree based model and a random forest model were created which can predict if a visitor is likely to be converted to a paid customer. 
+- This can be used by the company to predict which visitors are likely to be converted to paying customers thereby plan their marketing strategies
+- Training and Testing sets were created and run to determine the best model fit.
+
+_Two models performed very well:_
+1. Tuned Model - recall 86%, f1-score 72% and macro average 82%
+
+2. Hyper Tuned Random Forest Model - recall 85%, f1-score 76% and macro average 84%
+
+## Conclusions:
+
+**Model Recommendation**
+
+The **Hyper Tuned Random Forest Model** is recommended for future use as it had a 4% overall improvement. It is also giving the highest Recall score of 85% and the macro average of 84% on the test data.
+
+- The **Decision Tree Model** only recognized 5 features as important.  
+- The **Random Forest Model** also recognized 7 additional features which had some impact (some very small)
+
+**4 Most Important Features identified by both models**
+
+<code>time_spent_on_website</code>
+
+<code>first_interaction</code> (Website)
+
+<code>profile_completed</code> (Medium)
+
+<code>age</code>
+
+**Business Recommendations**
+
+ExtraaLearn's Representatives should prioritize visitors based on:
+1. The visitors <code>time_spent_on_website</code>.
+- This was the top feature for both models in determining if a visitor would convert to a paying customer or not.  
+
+2. The visitors <code>first_interaction</code> on the website.
+- If a visitor's first interaction was on the website instead of the app they were more like to become paying customers.  Therefore this should be another point for the representatives to pay attention to when deciding on the amount of time to dedicate to a visitor.
+
+3. The visitors <code>profile_completed</code>
+- If the visitor has been identified as a medium for the completion of the profile they are more likely to convert to a paying customer.  
+
+4. The visitors <code>age</code>
+- If a visitor is within the identified age of 45 - 55 years then they are more likely to convert to becoming a paying customer.   
+
+- Visitors who meet these criteria as demonstrated in order ExtraaLearn will be able to decide where to focus their time when talking with new visitors.  
+- This will allow the business to make better use of its time when pursuing and converting leads into paying customers.
