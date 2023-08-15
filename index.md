@@ -12,7 +12,11 @@
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
-### Practical Data Science - Machine Learning Models - Decision Tree and Random Forest for Business Recommendations
+### Practical Data Science - Machine Learning Models <br><br>
+### Decision Tree and Random Forest for Business Recommendations <br><br>
+- Python is used to analyze, visualize and build a model to predict potential customers
+- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
+
 [ExtraaLearn](/ExtraaLearn_Decision_Tree.md) <br><br>
 [ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
 [ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
