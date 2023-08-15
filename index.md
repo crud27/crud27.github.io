@@ -6,15 +6,16 @@
 - Python is used to analyze and visualize data in order to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 #### Objective
--
+- Perform data analysis to what will help the company to improve the business.
+
 [FoodHub](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
 <img src="images/Title Page.jpg?raw=true"/>
 
 ---
-### Practical Data Science - Machine Learning Models <br><br>
-### Decision Tree and Random Forest for Business Recommendations <br><br>
+### Practical Data Science - Machine Learning Models 
+### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 #### Objective
@@ -28,8 +29,18 @@
 <img src="images/Decision_Tree_Diag.png?raw=true"/>
 
 ---
-[6-Month Electric Consumption](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+### Practical Data Science 2 - Machine Learning Models 
+### Decision Tree and Random Forest for Business Recommendations 
+- Python is used to analyze, visualize and build a model to predict potential customers
+- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
+#### Objective
+- Analyze and build a classification model to predict clients who are likely to default on their loan
+- Identify important features to consider while approving a loan.
+- Give recommendations to the bank on the profile of the persons who are likely to default on their loan
+
+[Customer Loan Default Prediction](http://example.com/) <br><br>
+[Customer Loan Default Prediction Presentation](/pdf/Loan Default Predictionu.pdf) <br><br>
+<img src="images/Loan Default Prediction Title page.jpg?raw=true"/>
 
 ---
 
