@@ -8,7 +8,7 @@
 #### Objective
 - Perform data analysis to what will help the company to improve the business.
 
-[FoodHub](/food_hub.md) <br><br>
+[FoodHub (Markdown_File)](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
 <img src="images/Title Page.jpg?raw=true"/>
@@ -17,13 +17,13 @@
 ### Practical Data Science - Machine Learning Models 
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize and build a model to predict potential customers
-- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
+- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
 #### Objective
 - Analyze and build an ML model to help identify which leads are more likely to convert to paid customers,
 - Find the factors driving the lead conversion process
 - Create a profile of the leads who are likely to convert
 
-[ExtraaLearn](/ExtraaLearn_Decision_Tree.md) <br><br>
+[ExtraaLearn (Markdown_File)](/ExtraaLearn_Decision_Tree.md) <br><br>
 [ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
 [ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
 <img src="images/Decision_Tree_Diag.png?raw=true"/>
@@ -32,14 +32,15 @@
 ### Practical Data Science 2 - Machine Learning Models 
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize and build a model to predict potential customers
-- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
+- Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
 #### Objective
 - Analyze and build a classification model to predict clients who are likely to default on their loan
 - Identify important features to consider while approving a loan.
 - Give recommendations to the bank on the profile of the persons who are likely to default on their loan
 
-[Customer Loan Default Prediction](Cap_Proj_Loan_Default_Predict_FC_CR_F) <br><br>
+[Customer Loan Default Prediction (Markdown_File)](Cap_Proj_Loan_Default_Predict_FC_CR_F) <br><br>
 [Customer Loan Default Prediction Presentation](/pdf/Loan Default Predictionu.pdf) <br><br>
+[Customer Loan Default Prediction Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb)
 <img src="images/Loan Default Prediction Title page.jpg?raw=true"/>
 
 ---
