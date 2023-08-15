@@ -4,25 +4,24 @@
 
 ### **The Context:**
 
- - A major proportion of retail bank profit comes from interests in the form of home loans. These loans are borrowed by regular income/high earning customers. Banks are most fearful of defaulters, as bad loans (NPA) usually eat up a major chunk of their profits. Therefore, it is important for banks to be judicious while approving loans for their customer base.
+ - A major proportion of retail bank profit comes from interests in the form of home loans. These loans are borrowed by regular income/high-earning customers. Banks are most fearful of defaulters, as bad loans (NPA) usually eat up a major chunk of their profits. Therefore, it is important for banks to be judicious while approving loans for their customer base.
 
-- The approval process for the loans is multifaceted. Through this process, the bank tries to check the credit worthiness of the applicant on the basis of a manual study of various aspects of the application. The entire process is not only effort-intensive but also prone to wrong judgment/approval owing to human error and biases.
+- The approval process for the loans is multifaceted. Through this process, the bank tries to check the creditworthiness of the applicant on the basis of a manual study of various aspects of the application. The entire process is not only effort-intensive but also prone to wrong judgment/approval owing to human error and biases.
 
 - There have been attempts by many banks to automate this process by using heuristics. But with the advent of data science and machine learning, the focus has shifted to building machines that can learn this approval process and make it free of biases and more efficient. At the same time, one important thing to keep in mind is to make sure that the machine does not learn the biases that previously crept in because of the human approval process.
 
- - A bank's consumer credit department aims to simplify the decision making process for home equity lines of credit to be accepted. To do this, they will adopt the **Equal Credit Opportunity Act's** guidelines to establish an empirically derived and statistically sound model for credit scoring. The model will be based on the data obtained via the existing loan underwriting process from recent applicants who have been given credit. The model will be built from predictive modeling techniques, but the model created must be interpretable enough to provide a justification for any adverse behavior (rejections).
+ - A bank's consumer credit department aims to simplify the decision-making process for home equity lines of credit to be accepted. To do this, they will adopt the **Equal Credit Opportunity Act's** guidelines to establish an empirically derived and statistically sound model for credit scoring. The model will be based on the data obtained via the existing loan underwriting process from recent applicants who have been given credit. The model will be built from predictive modeling techniques, but the model created must be interpretable enough to provide a justification for any adverse behavior (rejections).
 
 ### **The objective:**
  
- - Analyze and build a classification model to predict clients who are likely to default on their loan and 
+ - Analyze and build a classification model to predict clients who are likely to default on their loans and 
  - Identify important features to consider while approving a loan.
- - Give recommendations to the bank on the on a profile of the persons who are likely to default on their loan
+ - Give recommendations to the bank on the profile of the persons who are likely to default on their loan
  
-
 ### **The key questions:**
 
 - What are the key questions that need to be answered?
-- What were the average number of years at the job for the delinquent clients
+- What was the average number of years at the job for the delinquent clients
 - What were the top 3 Jobs of the delinquent clients
 - What are the lengths of the top 5 delinquent lines of credit
 - Which reason for the loan request, Home Improvement or Debt consolidation has the most delinquencies
@@ -35,127 +34,43 @@
 ## **Data Description:**
 The Home Equity dataset (HMEQ) contains baseline and loan performance information for 5,960 recent home equity loans. The target (BAD) is a binary variable that indicates whether an applicant has ultimately defaulted or has been severely delinquent. This adverse outcome occurred in 1,189 cases (20 percent). 12 input variables were registered for each applicant.
 
-
 * **BAD:** 1 = Client defaulted on loan, 0 = loan repaid
-
 * **LOAN:** Amount of loan approved.
-
 * **MORTDUE:** Amount due on the existing mortgage.
-
 * **VALUE:** Current value of the property. 
-
 * **REASON:** Reason for the loan request. (HomeImp = home improvement, DebtCon= debt consolidation which means taking out a new loan to pay off other liabilities and consumer debts) 
-
-* **JOB:** The type of job that loan applicant has such as manager, self, etc.
-
+* **JOB:** The type of job that the loan applicant has such as manager, self, etc.
 * **YOJ:** Years at present job.
-
-* **DEROG:** Number of major derogatory reports (which indicates a serious delinquency or late payments). 
-
+* **DEROG:** Number of major derogatory reports (which indicate serious delinquency or late payments). 
 * **DELINQ:** Number of delinquent credit lines (a line of credit becomes delinquent when a borrower does not make the minimum required payments 30 to 60 days past the day on which the payments were due). 
-
 * **CLAGE:** Age of the oldest credit line in months. 
-
 * **NINQ:** Number of recent credit inquiries. 
-
 * **CLNO:** Number of existing credit lines.
-
 * **DEBTINC:** Debt-to-income ratio (all your monthly debt payments divided by your gross monthly income. This number is one way lenders measure your ability to manage the monthly payments to repay the money you plan to borrow.
 
 ## **Import the necessary libraries and Data**
 
 
-```python
+```javascript
 import warnings
 warnings.filterwarnings("ignore")
-
 import sys
 !{sys.executable} -m pip install missingno
-
 !{sys.executable} -m pip install plotnine
-
 !{sys.executable} -m pip install --upgrade matplotlib
-```
+``` 
 
-    Defaulting to user installation because normal site-packages is not writeable
-    Looking in links: /usr/share/pip-wheels
-    Requirement already satisfied: missingno in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (0.5.2)
-    Requirement already satisfied: numpy in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from missingno) (1.25.2)
-    Requirement already satisfied: seaborn in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from missingno) (0.11.2)
-    Requirement already satisfied: matplotlib in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from missingno) (3.7.2)
-    Requirement already satisfied: scipy in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from missingno) (1.11.1)
-    Requirement already satisfied: pillow>=6.2.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (9.0.1)
-    Requirement already satisfied: contourpy>=1.0.1 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib->missingno) (1.1.0)
-    Requirement already satisfied: fonttools>=4.22.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (4.25.0)
-    Requirement already satisfied: importlib-resources>=3.2.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib->missingno) (6.0.0)
-    Requirement already satisfied: cycler>=0.10 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (0.11.0)
-    Requirement already satisfied: pyparsing<3.1,>=2.3.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (3.0.4)
-    Requirement already satisfied: packaging>=20.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (21.3)
-    Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (2.8.2)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib->missingno) (1.3.2)
-    Requirement already satisfied: zipp>=3.1.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib->missingno) (3.7.0)
-    Requirement already satisfied: six>=1.5 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib->missingno) (1.16.0)
-    Requirement already satisfied: pandas>=0.23 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from seaborn->missingno) (2.0.3)
-    Requirement already satisfied: pytz>=2020.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from pandas>=0.23->seaborn->missingno) (2021.3)
-    Requirement already satisfied: tzdata>=2022.1 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from pandas>=0.23->seaborn->missingno) (2023.3)
-    Defaulting to user installation because normal site-packages is not writeable
-    Looking in links: /usr/share/pip-wheels
-    Requirement already satisfied: plotnine in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (0.12.2)
-    Requirement already satisfied: pandas>=1.5.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (2.0.3)
-    Requirement already satisfied: numpy>=1.23.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (1.25.2)
-    Requirement already satisfied: mizani<0.10.0,>0.9.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (0.9.2)
-    Requirement already satisfied: patsy>=0.5.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from plotnine) (0.5.2)
-    Requirement already satisfied: statsmodels>=0.14.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (0.14.0)
-    Requirement already satisfied: matplotlib>=3.6.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (3.7.2)
-    Requirement already satisfied: scipy>=1.5.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from plotnine) (1.11.1)
-    Requirement already satisfied: cycler>=0.10 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (0.11.0)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (1.3.2)
-    Requirement already satisfied: packaging>=20.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (21.3)
-    Requirement already satisfied: pyparsing<3.1,>=2.3.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (3.0.4)
-    Requirement already satisfied: contourpy>=1.0.1 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (1.1.0)
-    Requirement already satisfied: importlib-resources>=3.2.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (6.0.0)
-    Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (2.8.2)
-    Requirement already satisfied: pillow>=6.2.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (9.0.1)
-    Requirement already satisfied: fonttools>=4.22.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib>=3.6.0->plotnine) (4.25.0)
-    Requirement already satisfied: zipp>=3.1.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib>=3.6.0->plotnine) (3.7.0)
-    Requirement already satisfied: pytz>=2020.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from pandas>=1.5.0->plotnine) (2021.3)
-    Requirement already satisfied: tzdata>=2022.1 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from pandas>=1.5.0->plotnine) (2023.3)
-    Requirement already satisfied: six in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from patsy>=0.5.1->plotnine) (1.16.0)
-    Defaulting to user installation because normal site-packages is not writeable
-    Looking in links: /usr/share/pip-wheels
-    Requirement already satisfied: matplotlib in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (3.7.2)
-    Requirement already satisfied: importlib-resources>=3.2.0 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib) (6.0.0)
-    Requirement already satisfied: contourpy>=1.0.1 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib) (1.1.0)
-    Requirement already satisfied: fonttools>=4.22.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (4.25.0)
-    Requirement already satisfied: pillow>=6.2.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (9.0.1)
-    Requirement already satisfied: cycler>=0.10 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (0.11.0)
-    Requirement already satisfied: packaging>=20.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (21.3)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (1.3.2)
-    Requirement already satisfied: numpy>=1.20 in /home/21fb4cc8-6cdc-4127-89ab-c15551626a4a/.local/lib/python3.9/site-packages (from matplotlib) (1.25.2)
-    Requirement already satisfied: pyparsing<3.1,>=2.3.1 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (3.0.4)
-    Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from matplotlib) (2.8.2)
-    Requirement already satisfied: zipp>=3.1.0 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib) (3.7.0)
-    Requirement already satisfied: six>=1.5 in /opt/conda/envs/anaconda-2022.05-py39/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
-    
-
-
-```python
+```javascript
 import warnings
 warnings.filterwarnings("ignore")
-
 # Libraries for data manipulation and visualization
 import pandas as pd
-
 import numpy as np
-
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
- 
 import missingno as msno
-
 import seaborn as sns
 sns.set_theme()
-
 from plotnine import ggplot, aes, geom_point, geom_bar, labs, theme, theme_bw, element_text, element_blank, scale_fill_manual
 
 # For training and testing the data
@@ -184,9 +99,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score
 
 ```
-
 ## **Data Overview**
-
 - Reading the dataset
 - Understanding the shape of the dataset
 - Checking the data types
@@ -196,32 +109,25 @@ from sklearn.metrics import accuracy_score
 ## Load the data
 - Create a copy to use for data manipulation
 
-
-```python
+```javascript
 # Load the data - original data set
 client_data = pd.read_csv('hmeq.csv')
 ```
 
-
-```python
+```javascript
 # create a copy of the data set to work with
 df = client_data.copy()
 ```
 
 ## Data Overview
-
 - Observations
 - Sanity checks
 - View the first and last five rows of the data
 
-
-```python
+```javascript
 # look at the first rows of the data
 df.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -342,15 +248,10 @@ df.head()
 </div>
 
 
-
-
-```python
+```javascript
 # check the data last five rows
 df.tail()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -471,21 +372,13 @@ df.tail()
 </div>
 
 
-
-
-```python
+```javascript
 df.shape
 ```
-
-
-
-
+**Observations**
     (5960, 13)
 
-
-
-
-```python
+```javascript
 df.info()
 ```
 
@@ -521,8 +414,7 @@ df.info()
 **Missing Values**
 - Determine the number of missing values for each feature
 
-
-```python
+```javascript
 # Count the number of missing values in each column
 missing_values_count = df.isnull().sum()
 
@@ -550,8 +442,7 @@ print(missing_values_count)
 
 - Percentage of missing values
 
-
-```python
+```javascript
 # Find the percentage of missing values in each column
 percent_missing = (missing_values_count/5960)*100
 
@@ -581,8 +472,7 @@ print(percent_missing)
 - <code>DEBTINC</code> has the highest percent of missing values with 21%
 - All other features have <= 11.8% missing values
 
-
-```python
+```javascript
 #Visulaize the number of missing values in each row
 # Visualize missing values using missingno with custom colors
 # Visualize missing values using missingno with custom colors
@@ -597,15 +487,12 @@ plt.legend(handles=[present_patch, missing_patch], title='Legend', bbox_to_ancho
 plt.show()
 
 ```
-
-
-    
-![png](output_22_0.png)
-    
+**Visualizations of Missing Values**    
+<img src="cust_loan_pred/output_22_0.png?raw=true"/>    
 
 
 
-```python
+```javascript
 # Convert object columns to a categorical (factor)
 df['BAD'] = df['BAD'].astype('category')
 df['REASON'] = df['REASON'].astype('category')
@@ -639,7 +526,7 @@ df.info()
 ## Summary Statistics
 
 
-```python
+```javascript
 df.describe()
 ```
 
@@ -817,7 +704,7 @@ df.describe()
 - There is a large gap between the 75th percentile and maximum, perhaps indicating outliers
 
 
-```python
+```javascript
 # Check summary for categorical data 
 df.describe(include=['category'])
 ```
@@ -880,7 +767,7 @@ df.describe(include=['category'])
 
 
 
-```python
+```javascript
 # Checking the count of unique values in each categorical column 
 cols_cat= df.select_dtypes(['category'])
 
@@ -915,7 +802,7 @@ for i in cols_cat.columns:
     
 
 
-```python
+```javascript
 #create a bar chart to determine the number of customers which have defaulted on their loan (1)
 plt.figure(figsize = (10, 6))
 
@@ -925,11 +812,7 @@ ax = sns.countplot(x = 'BAD', data = df)
 for p in ax.patches:
     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x(), p.get_height()))
 ```
-
-
-    
-![png](output_29_0.png)
-    
+<img src="cust_loan_pred/output_29_0.png?raw=true"/>
 
 
 **Observations for Categorical Summary**
@@ -968,7 +851,7 @@ for p in ax.patches:
 #### Create box plots to determine if there are any outliers in the data.
 
 
-```python
+```javascript
 #create histograms and box plots to visualize data to identify the distribution and outliers
 
 for col in ['LOAN', 'MORTDUE', 'VALUE', 'YOJ', 'DEROG', 'DELINQ', 'CLAGE', 'NINQ', 'CLNO', 'DEBTINC']:
@@ -1000,107 +883,48 @@ for col in ['LOAN', 'MORTDUE', 'VALUE', 'YOJ', 'DEROG', 'DELINQ', 'CLAGE', 'NINQ
 
     LOAN
     The skew is: 2.02
-    
-
-
-    
-![png](output_36_1.png)
-    
-
+<img src="cust_loan_pred/output_36_0.png?raw=true"/>    
 
     MORTDUE
     The skew is: 1.81
-    
-
-
-    
-![png](output_36_3.png)
-    
-
+<img src="cust_loan_pred/output_36_3.png?raw=true"/>    
 
     VALUE
     The skew is: 3.05
-    
-
-
-    
-![png](output_36_5.png)
-    
-
+<img src="cust_loan_pred/output_36_5.png?raw=true"/>       
 
     YOJ
     The skew is: 0.99
-    
-
-
-    
-![png](output_36_7.png)
-    
-
+<img src="cust_loan_pred/output_36_7.png?raw=true"/>       
 
     DEROG
     The skew is: 5.32
-    
-
-
-    
-![png](output_36_9.png)
-    
-
+ <img src="cust_loan_pred/output_36_9.png?raw=true"/>      
 
     DELINQ
     The skew is: 4.02
-    
-
-
-    
-![png](output_36_11.png)
-    
-
+<img src="cust_loan_pred/output_36_11.png?raw=true"/>       
 
     CLAGE
     The skew is: 1.34
-    
-
-
-    
-![png](output_36_13.png)
-    
-
+<img src="cust_loan_pred/output_36_13.png?raw=true"/>       
 
     NINQ
     The skew is: 2.62
-    
-
-
-    
-![png](output_36_15.png)
-    
-
+ <img src="cust_loan_pred/output_36_15.png?raw=true"/>      
 
     CLNO
     The skew is: 0.78
-    
-
-
-    
-![png](output_36_17.png)
-    
-
+  <img src="cust_loan_pred/output_36_17.png?raw=true"/>     
 
     DEBTINC
     The skew is: 2.85
-    
-
-
-    
-![png](output_36_19.png)
-    
+<img src="cust_loan_pred/output_36_19.png?raw=true"/>       
 
 
 **Observations**
 - <code>LOAN</code> - Positive Skew (2.02) with a range from 0 to 90000 and there are outliers present on the box plot. 
-- Due to the low number loans above the 75th% these should remain.  The bank is only going above that in a few cases.
+- Due to the low number of loans above the 75th% these should remain.  The bank is only going above that in a few cases.
 
 - <code>MORTDUE</code> - Positive Skew (1.9) with a range from 0 to 275000 and there are outliers present on the box plot
 - Considering the number of outliers outside of the 75th percentile, it is likely this is not an error.
@@ -1120,18 +944,18 @@ for col in ['LOAN', 'MORTDUE', 'VALUE', 'YOJ', 'DEROG', 'DELINQ', 'CLAGE', 'NINQ
 - Given the spread of data points it is **highly likely that the 2 max outliers are errors.** Should remove them as to not contaminate the data.
 
 - <code>NINQ</code> - Positive Skew (2.74) with a range from 0 to 12 and there are outliers present on the box plot.  
-- Looks more like special cases, rather than outliers, as it follows the curve the data.
+- Looks more like special cases, rather than outliers, as it follows the curve of the data.
 
 - <code>CLNO</code> - Positive Skew (2.02) with a range from 0 to 70 and there are outliers present on the box plot
 
-- <code>DEBTINC</code> - Positive Skew (3.21) with a range from 0 to 75 and there are outliers present on the box plot.  IT is not likely that a person has a Debt to income ratio greater than 200. Last outlier is likely an error, should remove it.
+- <code>DEBTINC</code> - Positive Skew (3.21) with a range from 0 to 75 and there are outliers present on the box plot.  IT is not likely that a person has a Debt to income ratio greater than 200. The last outlier is likely an error, should remove it.
 
 
 
 **Univariate Analysis - Categorical Data**
 
 
-```python
+```Javascript
 # Build barplot for REASON
 plt.figure(figsize=(15, 5))
 ax = sns.countplot(df["REASON"], palette='winter')
@@ -1150,15 +974,10 @@ perc_on_bar(ax, df["REASON"])
 plt.show()
 
 ```
+<img src="cust_loan_pred/output_39_0.png?raw=true"/>   
 
 
-    
-![png](output_39_0.png)
-    
-
-
-
-```python
+```javascript
 # Build barplot for JOB
 plt.figure(figsize=(15, 5))
 ax = sns.countplot(df["JOB"], palette='winter')
@@ -1177,11 +996,7 @@ perc_on_bar(ax, df["JOB"])
 plt.show()
 
 ```
-
-
-    
-![png](output_40_0.png)
-    
+<img src="cust_loan_pred/output_40_0.png?raw=true"/>   
 
 
 **Major Observations**
@@ -1192,21 +1007,12 @@ plt.show()
 **BAD vs LOAN**
 
 
-```python
+```javascript
 sns.boxplot(df["BAD"],df['LOAN'],palette="PuBu")
 ```
 
-
-
-
     <Axes: xlabel='BAD', ylabel='LOAN'>
-
-
-
-
-    
-![png](output_44_1.png)
-    
+<img src="cust_loan_pred/output_44_1.png?raw=true"/>   
 
 
 **Observations**
@@ -1215,21 +1021,11 @@ sns.boxplot(df["BAD"],df['LOAN'],palette="PuBu")
 **BAD vs. MORTDUE**
 
 
-```python
+```javascript
 sns.boxplot(df["BAD"],df['MORTDUE'],palette="PuBu")
 ```
-
-
-
-
     <Axes: xlabel='BAD', ylabel='MORTDUE'>
-
-
-
-
-    
-![png](output_47_1.png)
-    
+<img src="cust_loan_pred/output_47_1.png?raw=true"/>   
 
 
 **Observations**
@@ -1238,22 +1034,12 @@ sns.boxplot(df["BAD"],df['MORTDUE'],palette="PuBu")
 **BAD vs. VALUE**
 
 
-```python
+```javascript
 sns.boxplot(df["BAD"],df['VALUE'],palette="PuBu")
 ```
 
-
-
-
     <Axes: xlabel='BAD', ylabel='VALUE'>
-
-
-
-
-    
-![png](output_50_1.png)
-    
-
+<img src="cust_loan_pred/output_50_1.png?raw=true"/>   
 
 **Observations**
 - Value of existing mortgage **does not** seem to have a great impact on defaults.
@@ -1261,21 +1047,12 @@ sns.boxplot(df["BAD"],df['VALUE'],palette="PuBu")
 **BAD vs. DEBTINC**
 
 
-```python
+```javascript
 sns.boxplot(df["BAD"],df['DEBTINC'],palette="PuBu")
 ```
 
-
-
-
     <Axes: xlabel='BAD', ylabel='DEBTINC'>
-
-
-
-
-    
-![png](output_53_1.png)
-    
+<img src="cust_loan_pred/output_53_1.png?raw=true"/>   
 
 
 **Observations**
@@ -1286,44 +1063,24 @@ sns.boxplot(df["BAD"],df['DEBTINC'],palette="PuBu")
 **VALUE and DEROG**
 
 
-```python
+```javascript
 sns.scatterplot(df["VALUE"],df['DEROG'],palette="PuBu")
 ```
 
-
-
-
     <Axes: xlabel='VALUE', ylabel='DEROG'>
-
-
-
-
-    
-![png](output_57_1.png)
-    
-
+<img src="cust_loan_pred/output_57_1.png?raw=true"/>   
 
 - The larger the loan the lower number of derogatory records.
 
 **VALUE and DELINQ**
 
 
-```python
+```javascript
 sns.scatterplot(df["VALUE"],df['DELINQ'],palette="PuBu")
 ```
 
-
-
-
     <Axes: xlabel='VALUE', ylabel='DELINQ'>
-
-
-
-
-    
-![png](output_60_1.png)
-    
-
+<img src="cust_loan_pred/output_60_1.png?raw=true"/>   
 
 - The larger the value of the loan the lower number of delinquent records
 
@@ -1332,7 +1089,7 @@ sns.scatterplot(df["VALUE"],df['DELINQ'],palette="PuBu")
 The stacked bar graph allows you to look at numerical values across two categorical variables.
 
 
-```python
+```javascript
 # Function to plot stacked bar charts for categorical columns
 
 def stacked_plot(x):
@@ -1347,10 +1104,10 @@ def stacked_plot(x):
     plt.show()
 ```
 
-**Plot stacked bar plot for for LOAN and JOBS**
+**Plot stacked bar plot for LOAN and JOBS**
 
 
-```python
+```javascript
 # Plot stacked bar plot for LOAN and JOB
 stacked_plot(df['JOB'])
 ```
@@ -1366,20 +1123,14 @@ stacked_plot(df['JOB'])
     All      4515  1166  5681
     ------------------------------------------------------------------------------------------------------------------------
     
+<img src="cust_loan_pred/output_66_1.png?raw=true"/>   
 
+**Observations**
+- Sales employees and Self-employed have the highest instances of defaulting on their loan.
 
-    
-![png](output_66_1.png)
-    
+**Plot stacked bar plot for LOAN and DEROG**
 
-
-**observations**
-- Sales employees and Self employed have the highest instances of defaulting on their loan.
-
-**Plot stacked bar plot for for LOAN and DEROG**
-
-
-```python
+```javascript
 # Plot stacked bar plot for LOAN and DEROG
 stacked_plot(df['DEROG'])
 ```
@@ -1400,11 +1151,7 @@ stacked_plot(df['DEROG'])
     All    4150  1102  5252
     ------------------------------------------------------------------------------------------------------------------------
     
-
-
-    
-![png](output_69_1.png)
-    
+<img src="cust_loan_pred/output_69_1.png?raw=true"/>   
 
 
 **Observations**
@@ -1414,7 +1161,7 @@ stacked_plot(df['DEROG'])
 **Plot stacked bar plot for for LOAN and DELINQ**
 
 
-```python
+```javascript
 stacked_plot(df['DELINQ'])
 ```
 
@@ -1437,12 +1184,7 @@ stacked_plot(df['DELINQ'])
     All     4263  1117  5380
     ------------------------------------------------------------------------------------------------------------------------
     
-
-
-    
-![png](output_72_1.png)
-    
-
+<img src="cust_loan_pred/output_72_1.png?raw=true"/>   
 
 **Observations**
 - The customers with >= 6 Delinquencies all defaulted on their loan
@@ -1452,7 +1194,7 @@ stacked_plot(df['DELINQ'])
 **Correlation heat map**
 
 
-```python
+```javascript
 # Separating numerical variables
 numerical_col = df.select_dtypes(include=np.number).columns.tolist()
 
@@ -1468,17 +1210,11 @@ sns.heatmap(corr,cmap='coolwarm',vmax=1,vmin=-1,
         xticklabels=corr.columns,
         yticklabels=corr.columns);
 ```
-
-
-    
-![png](output_76_0.png)
-    
+<img src="cust_loan_pred/output_76_0.png?raw=true"/>   
 
 
 **Observations**
 - The mortgage due and the value of the house are very closely related with 0.88
-
-**Pair Plot**
 
 ## Treating Outliers
 
@@ -1491,14 +1227,14 @@ sns.heatmap(corr,cmap='coolwarm',vmax=1,vmin=-1,
 2. if outlier is > Upper Whisker then replace outlier with Upper Whisker
 
 
-```python
+```javascript
 # make a copy of the original data
 df_raw = df.copy()
 
 ```
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1551,7 +1287,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1593,7 +1329,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1646,7 +1382,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1699,7 +1435,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1752,7 +1488,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1805,7 +1541,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1894,7 +1630,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -1947,7 +1683,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -2000,7 +1736,7 @@ outliers
 
 
 
-```python
+```javascript
 # Define the function to identify outliers
 def find_outliers_IQR(df_raw):
     Q1 = df_raw.quantile(0.25)
@@ -2055,7 +1791,7 @@ outliers
 **Checking that outliers have been removed**
 
 
-```python
+```javascript
 # Function that will create boxplot and histogram for any input numerical variable.
 # This function takes the numerical column as the input and return the boxplots and histograms for the variable.
 
@@ -2077,29 +1813,20 @@ def histogram_boxplot(feature, figsize=(15,10), bins = None):
 ```
 
 
-```python
+```javascript
 histogram_boxplot(df['VALUE'])
 histogram_boxplot(df_raw['VALUE'])
 ```
+<img src="cust_loan_pred/output_94_0.png?raw=true"/>   
 
-
-    
-![png](output_94_0.png)
-    
-
-
-
-    
-![png](output_94_1.png)
-    
-
+<img src="cust_loan_pred/output_94_1.png?raw=true"/>       
 
 ## Treating Missing Values
 
 Adding new columns in the dataset for each column which has missing values
 
 
-```python
+```javascript
 # Will look at each row to first determine the number of missing values in each row.  
 # create a column to give the number of missing values in the row.
 # Create a column to say 'keep' if number of missing values os <7 and 'del' if >=7 values 
@@ -2113,7 +1840,7 @@ df_raw['label'] = df_raw['num_null'].apply(lambda x: 'has_null' if x >= 1 else '
 ```
 
 
-```python
+```javascript
 # look at top 5 rows of the data frame with the additional columns
 df_raw.head()
 ```
@@ -2254,7 +1981,7 @@ df_raw.head()
 
 
 
-```python
+```javascript
 # Count the number of 'del' in the 'label' column
 num_del = (df_raw['label'] == 'has_null').sum()
 
@@ -2276,7 +2003,7 @@ print("Number of rows with missing values are:", num_del)
 - Will replace the missing numerical data with the median of the column. and the category with mode of the column.
 
 
-```python
+```javascript
 # Find columns of data type category
 df_obj = df_raw.select_dtypes(include=['category']).columns
 
@@ -2290,7 +2017,7 @@ for col in df_obj:
 Replace the missing values in the numerical columns with the mean of the column
 
 
-```python
+```javascript
 # Find columns of data type int64 and float64
 numeric_cols = df_raw.select_dtypes(include=['int64', 'float64']).columns
 
@@ -2300,7 +2027,7 @@ for col in numeric_cols:
 ```
 
 
-```python
+```javascript
 # recehck the number of missing values
 df_raw.info()
 ```
@@ -2330,7 +2057,7 @@ df_raw.info()
     
 
 
-```python
+```javascript
 df_raw.head()
 ```
 
@@ -2470,14 +2197,14 @@ df_raw.head()
 
 
 
-```python
+```javascript
 # Drop the 'num_null' and 'label' columns from df_raw
 df_raw = df_raw.drop(['num_null', 'label'], axis=1)
 
 ```
 
 
-```python
+```javascript
 # check the columns have been dropped
 df_raw.head()
 ```
@@ -2606,7 +2333,7 @@ df_raw.head()
 
 
 
-```python
+```javascript
 # check for multicollinearity between variables
 # Select numeric columns
 numeric_df = df_raw.select_dtypes(include=['number'])
@@ -2618,12 +2345,7 @@ plt.title('Correlation matrix of data', fontsize=30)
 plt.show()
 
 ```
-
-
-    
-![png](output_109_0.png)
-    
-
+<img src="cust_loan_pred/output_109_0.png?raw=true"/>   
 
 ## **Important Insights from EDA**
 
@@ -2648,7 +2370,7 @@ What are the the most important observations and insights from the data based on
 ### **Separating the target variable from other variables**
 
 
-```python
+```javascript
 #clean data set for LG
 df_lg = df_raw.copy()
 
@@ -2657,7 +2379,7 @@ df_clean = df_raw.copy()
 ```
 
 
-```python
+```javascript
 # Drop the dependent variable from the dataframe and create the X(independent variable) matrix
 X = df_clean.drop(columns = 'BAD') #make a copy called X which is a dataframe with "BAD" removed
 
@@ -2682,7 +2404,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.30, rand
 - Check the shape of the trainng and test sets of data after manipulation
 
 
-```python
+```javascript
 print("Shape of the training set: ", X_train.shape)   
 
 print("Shape of the test set: ", X_test.shape)
@@ -2713,7 +2435,7 @@ print(y_test.value_counts(normalize = True))
 ### Logistic Regression
 
 
-```python
+```javascript
 #Split the data into training and testing
 # 70/30 split
 
@@ -2745,7 +2467,7 @@ testData = pd.concat([test_ones, test_zeros])
 ```
 
 
-```python
+```javascript
 #check for imbalance 
 bad_counts = trainingData['BAD'].value_counts()
 
@@ -2759,7 +2481,7 @@ print(bad_counts)
     
 
 
-```python
+```javascript
 # check class distrubution
 class_distribution = trainingData['BAD'].value_counts(normalize=True)
 
@@ -2773,7 +2495,7 @@ print(class_distribution)
     
 
 
-```python
+```javascript
 # Visualize class distribution using a bar plot
 plt.figure(figsize=(8, 6))
 sns.barplot(x=class_distribution.index, y=class_distribution.values)
@@ -2783,12 +2505,8 @@ plt.title('Class Distribution')
 plt.show()
 ```
 
-
+<img src="cust_loan_pred/output_124_0.png?raw=true"/>   
     
-![png](output_124_0.png)
-    
-
-
 **Observation**
 - There is a class bias
 - To address class imbalance we need to use techniques like oversampling the minority class, undersampling the majority class, or using synthetic data generation techniques (e.g., SMOTE).
@@ -2812,18 +2530,18 @@ Decision Tree often perform well on imbalanced datasets. The splitting rules tha
 
 Model is attempting to find those that will default(1) on their loan, which will be our True Positive(TP), and therefore non-defaulters(0) will be our True Negative(TN)
 
-Model can make wrong predictions as:
+The model can make wrong predictions as:
 
-1. Predicting a applicant will not default on a loan but, in reality, the applicant would default this is a major loss in profit for the BANK.
-2. Predicting a applicant will default on a loan but, in reality, the applicant would have paid it off results in the bank loosing profit from the interest of that potential customer.
+1. Predicting an applicant will not default on a loan but, in reality, the applicant would default this is a major loss in profit for the BANK.
+2. Predicting an applicant will default on a loan but, in reality, the applicant would have paid it off results in the bank losing profit from the interest of that potential customer.
 
 **Which case is more important?**
 
-Predicting a applicant will not default on a loan but, in reality, the applicant would default this is a major loss in profit for the BANK.
+Predicting an applicant will not default on a loan but, in reality, the applicant would default is a major loss in profit for the BANK.
 
 **How to reduce the losses?**
 
-The bank would want **recall** to be maximized. The greater the recall score, higher the chances of minimizing False Negative.
+The bank would want **recall** to be maximized. The greater the recall score, the higher the chances of minimizing False Negative.
 In this case the **false negative** is predicting an applicant **will not default(0)**, when the applicant would default(1)
 
 That being said a high F1-Score is still preferable as that would result in more profits, as long as recall remains high.
@@ -2831,7 +2549,7 @@ That being said a high F1-Score is still preferable as that would result in more
 **METRIC Function**
 
 
-```python
+```javascript
 #creating metric function 
 def metrics_score(actual, predicted):
     print(classification_report(actual, predicted))
@@ -2845,7 +2563,7 @@ plt.show()
 ```
 
 
-```python
+```javascript
 #Create a table to add the results of the model
 results = pd.DataFrame(columns = ['Model_Name','Train_f1','Train_recall','Test_f1','Test_recall','Test_precision'])
 
@@ -2899,14 +2617,14 @@ results.head()
 Build Decision tree model
 
 
-```python
+```javascript
 #Defining Decision tree model with class weights class_weight={0: 0.2, 1: 0.8} to address data imbalance
 
 d_tree_base = DecisionTreeClassifier(random_state = 7, class_weight = {0: 0.2, 1: 0.8})
 ```
 
 
-```python
+```javascript
 #fitting Decision tree model
 d_tree_base.fit(X_train, y_train)
 ```
@@ -2921,7 +2639,7 @@ d_tree_base.fit(X_train, y_train)
 Checking the performance on the train dataset
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train1 = d_tree_base.predict(X_train)
 
@@ -2938,17 +2656,13 @@ metrics_score(y_train,y_pred_train1)
     weighted avg       1.00      1.00      1.00      4172
     
     
-
-
-    
-![png](output_138_1.png)
-    
+<img src="cust_loan_pred/output_138_1.png?raw=true"/>   
 
 
 Checking the performance on the test dataset
 
 
-```python
+```javascript
 # Checking performance on the testing data
 y_pred_test1 = d_tree_base.predict(X_test)
 
@@ -2964,18 +2678,13 @@ metrics_score(y_test,y_pred_test1)
        macro avg       0.76      0.74      0.75      1788
     weighted avg       0.84      0.84      0.84      1788
     
-    
+<img src="cust_loan_pred/output_140_1.png?raw=true"/>       
 
 
-    
-![png](output_140_1.png)
-    
+Add data to the results table
 
 
-Add data to results table
-
-
-```python
+```javascript
 # Adding the results to the table
 
 new_row = {'Model_Name': 'd_tree_base',
@@ -2998,7 +2707,7 @@ print(results)
     
 
 **Observations**
-- The base model is highly overfitted with the training data out performinning the testing data.
+- The base model is highly overfitted with the training data out performing the testing data.
 - The model has higher precision (64) to recall score (56).
 - We would like the Recall Score to be higher than the Precision Score.
 - Overall this is NOT a very good model.
@@ -3030,7 +2739,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClass
 Using GridSearchCV for Hyperparameter tuning on the model
 
 
-```python
+```javascript
 # Choose the type of classifier. 
 d_tree_tuned = DecisionTreeClassifier(random_state = 7, class_weight = {0: 0.2, 1: 0.8})
 
@@ -3064,10 +2773,10 @@ d_tree_tuned.fit(X_train, y_train)
 
 
 
-Checking the performance on the train dataset
+Checking the performance on the training dataset
 
 
-```python
+```javascript
 # Checking performance on the training data based on the tuned model
 y_pred_train2 = d_tree_tuned.predict(X_train)
 
@@ -3084,17 +2793,13 @@ metrics_score(y_train,y_pred_train2)
     weighted avg       0.88      0.85      0.86      4172
     
     
-
-
-    
-![png](output_148_1.png)
-    
+<img src="cust_loan_pred/output_148_1.png?raw=true"/>   
 
 
 Checking the performance on the test dataset
 
 
-```python
+```javascript
 # Checking performance on the testing data based on the tuned model
 y_pred_test2 = d_tree_tuned.predict(X_test)
 
@@ -3111,15 +2816,10 @@ metrics_score(y_test,y_pred_test2)
     weighted avg       0.86      0.85      0.85      1788
     
     
+<img src="cust_loan_pred/output_150_1.png?raw=true"/>   
 
 
-    
-![png](output_150_1.png)
-    
-
-
-
-```python
+```javascript
 # Adding the results to the table
 new_row = {'Model_Name': 'd_tree_base',
            'Train_f1': 68,
@@ -3150,7 +2850,7 @@ print(results)
 **Plotting the Decision Tree**
 
 
-```python
+```javascript
 # Plot the decision  tree and analyze it to build the decision rule
 features = list(X.columns)
 
@@ -3160,11 +2860,7 @@ tree.plot_tree(d_tree_tuned, feature_names = features, filled = True, fontsize =
 
 plt.show()
 ```
-
-
-    
-![png](output_154_0.png)
-    
+<img src="cust_loan_pred/output_154_0.png?raw=true"/>   
 
 
 **Observations**
@@ -3179,7 +2875,7 @@ The next high priority splits are made on:
 Plotting Feature Importance
 
 
-```python
+```javascript
 # Plotting the feature importance
 importances = d_tree_tuned.feature_importances_
 
@@ -3197,11 +2893,7 @@ plt.xlabel('Relative Importance')
 
 plt.show()
 ```
-
-
-    
-![png](output_157_0.png)
-    
+<img src="cust_loan_pred/output_157_0.png?raw=true"/>   
 
 
 **Observations**
@@ -3221,7 +2913,7 @@ plt.show()
 **The results from all the decision trees are combined together and the final prediction is made using voting or averaging.**
 
 
-```python
+```javascript
 # Defining Random forest CLassifier
 rf_base = RandomForestClassifier(random_state=7,criterion="entropy")
 
@@ -3238,7 +2930,7 @@ rf_base.fit(X_train,y_train)
 Checking the performance on the train dataset
 
 
-```python
+```javascript
 #Checking performance on the training data
 y_pred_train3 = rf_base.predict(X_train)
 
@@ -3255,17 +2947,13 @@ metrics_score(y_train,y_pred_train3)
     weighted avg       1.00      1.00      1.00      4172
     
     
-
-
-    
-![png](output_162_1.png)
-    
+<img src="cust_loan_pred/output_162_1.png?raw=true"/>   
 
 
 Checking the performance on the test dataset
 
 
-```python
+```javascript
 # Checking performance on the test data
 y_pred_test3 = rf_base.predict(X_test)
 
@@ -3282,17 +2970,13 @@ metrics_score(y_test, y_pred_test3)
     weighted avg       0.89      0.89      0.88      1788
     
     
-
-
-    
-![png](output_164_1.png)
-    
+<img src="cust_loan_pred/output_164_1.png?raw=true"/>   
 
 
 Add data to results table
 
 
-```python
+```javascript
 # Adding the results to the table
 new_row = {'Model_Name': 'random_forest',
            'Train_f1': 100,
@@ -3321,7 +3005,7 @@ print(results)
 Random Forest with class weights
 
 
-```python
+```javascript
 # Defining Random Forest model with class weights class_weight={0: 0.2, 1: 0.8}
 rf_weighted = RandomForestClassifier(random_state = 7, class_weight = {0: 0.2, 1: 0.8})
 
@@ -3339,7 +3023,7 @@ rf_weighted.fit(X_train,y_train)
 Checking the performance on the train dataset
 
 
-```python
+```javascript
 # Checking performance on the train data
 y_pred_train4 = rf_weighted.predict(X_train)
 
@@ -3355,18 +3039,13 @@ metrics_score(y_train,y_pred_train4)
        macro avg       1.00      1.00      1.00      4172
     weighted avg       1.00      1.00      1.00      4172
     
-    
-
-
-    
-![png](output_171_1.png)
-    
+<img src="cust_loan_pred/output_171_1.png?raw=true"/>       
 
 
 Checking the performance on the test dataset
 
 
-```python
+```javascript
 # Checking performance on the test data
 y_pred_test4 = rf_weighted.predict(X_test)
 
@@ -3382,16 +3061,10 @@ metrics_score(y_test, y_pred_test4)
        macro avg       0.88      0.76      0.80      1788
     weighted avg       0.89      0.89      0.88      1788
     
-    
+<img src="cust_loan_pred/output_173_1.png?raw=true"/>       
 
 
-    
-![png](output_173_1.png)
-    
-
-
-
-```python
+```javascript
 # Adding the results to the table
 new_row = {'Model_Name': 'random_forest',
            'Train_f1': 100,
@@ -3418,7 +3091,7 @@ Weighting the random forest has dropped both the f1-score and recall scores
 ### **Random Forest Classifier Hyperparameter Tuning**
 
 
-```python
+```javascript
 # Choose the type of classifier 
 rf_tuned = RandomForestClassifier(criterion = "entropy", random_state = 7)
 
@@ -3460,7 +3133,7 @@ rf_tuned.fit(X_train, y_train)
 Checking the performance on the train dataset
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train5 = rf_tuned.predict(X_train)
 
@@ -3477,17 +3150,12 @@ metrics_score(y_train, y_pred_train5)
     weighted avg       0.86      0.80      0.82      4172
     
     
-
-
-    
-![png](output_179_1.png)
-    
-
+<img src="cust_loan_pred/output_179_1.png?raw=true"/>   
 
 Checking the performance on the test dataset
 
 
-```python
+```javascript
 # Checking performace on test dataset
 y_pred_test5 = rf_tuned.predict(X_test)
 
@@ -3504,15 +3172,9 @@ metrics_score(y_test, y_pred_test5)
     weighted avg       0.85      0.80      0.81      1788
     
     
+<img src="cust_loan_pred/output_181_1.png?raw=true"/>   
 
-
-    
-![png](output_181_1.png)
-    
-
-
-
-```python
+```javascript
 # Adding the results to the table
 new_row = {'Model_Name': 'random_forest',
            'Train_f1': 62,
@@ -3545,7 +3207,7 @@ results.to_csv('results.csv')
 Plot the Feature importance of the tuned Random Forest
 
 
-```python
+```javascript
 # importance of features in the random forest
 importances = rf_tuned.feature_importances_
 
@@ -3565,11 +3227,7 @@ plt.xlabel('Relative Importance')
 
 plt.show()
 ```
-
-
-    
-![png](output_185_0.png)
-    
+<img src="cust_loan_pred/output_185_0.png?raw=true"/>   
 
 
 **Observations**
@@ -3649,20 +3307,3 @@ The **top two features** identified by both the Decision Tree and the Random For
 - <code>DEBTINC</code> had the most missing values and had some possible inaccuracies in the data.  This feature was found to be the MOST important feature for predicting if a person would default.  The importance could be because of the correction of the missing values or it could be because it is important.  This needs to be evaluated further.  
 
 
-
-
-
-
-**1. Comparison of various techniques and their relative performance based on chosen Metric (Measure of success):** 
-- How do different techniques perform? Which one is performing relatively better? Is there scope to improve the performance further?
-
-**2. Refined insights:** 
-- What are the most meaningful insights relevant to the problem?
-
-**3. Proposal for the final solution design:** 
-- What model do you propose to be adopted? Why is this the best solution to adopt?
-
-
-```python
-
-```
