@@ -5,7 +5,8 @@
 ### Data Analysis for Business Recommendations 
 - Python is used to analyze and visualize data in order to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
-
+#### Objective
+-
 [FoodHub](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
@@ -16,6 +17,10 @@
 ### Decision Tree and Random Forest for Business Recommendations <br><br>
 - Python is used to analyze, visualize and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
+#### Objective
+- Analyze and build an ML model to help identify which leads are more likely to convert to paid customers,
+- Find the factors driving the lead conversion process
+- Create a profile of the leads who are likely to convert
 
 [ExtraaLearn](/ExtraaLearn_Decision_Tree.md) <br><br>
 [ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
