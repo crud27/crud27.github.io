@@ -38,7 +38,7 @@
 - Identify important features to consider while approving a loan.
 - Give recommendations to the bank on the profile of the persons who are likely to default on their loan
 
-[Customer Loan Default Prediction](http://example.com/) <br><br>
+[Customer Loan Default Prediction](Cap_Project_Loan_Default_Prediction_FC_CR (2)) <br><br>
 [Customer Loan Default Prediction Presentation](/pdf/Loan Default Predictionu.pdf) <br><br>
 <img src="images/Loan Default Prediction Title page.jpg?raw=true"/>
 
