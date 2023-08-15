@@ -40,7 +40,7 @@
 
 [Customer Loan Default Prediction (Markdown_File)](Cap_Proj_Loan_Default_Predict_FC_CR_F) <br><br>
 [Customer Loan Default Prediction Presentation](/pdf/Loan Default Predictionu.pdf) <br><br>
-[Customer Loan Default Prediction Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb)
+[Customer Loan Default Prediction Jupyter Notebook](/Cap_Project_Loan_Default_Prediction_FC_CR.ipynb)
 <img src="images/Loan Default Prediction Title page.jpg?raw=true"/>
 
 ---
