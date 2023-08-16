@@ -23,8 +23,7 @@
 - Find the factors driving the lead conversion process
 - Create a profile of the leads who are likely to convert
 
-[ExtraaLearn (Markdown_File)](/ExtraaLearn_Decision_Tree.md) <br><br>
-[ExtraaLearn Presentation](/pdf/ExtraaLearn Analysis and Recommendations.pdf) <br><br>
+[ExtraaLearn (Markdown_File)](/Potential_Customers.md) <br><br>
 [ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
 <img src="images/Decision_Tree_Diag.png?raw=true"/>
 
