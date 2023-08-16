@@ -4,7 +4,7 @@
 
 The EdTech industry has been surging in the past decade immensely, and according to a forecast, the Online Education market would be worth $286.62bn by 2023 with a compound annual growth rate (CAGR) of 10.26% from 2018 to 2023. The modern era of online education has enforced a lot in its growth and expansion beyond any limit. Due to having many dominant features like ease of information sharing, personalized learning experience, transparency of assessment, etc, it is now preferable to traditional education. 
 
-In the present scenario due to the Covid-19, the online education sector has witnessed rapid growth and is attracting a lot of new customers. Due to this rapid growth, many new companies have emerged in this industry. With the availability and ease of use of digital marketing resources, companies can reach out to a wider audience with their offerings. The customers who show interest in these offerings are termed as leads. There are various sources of obtaining leads for Edtech companies, like
+In the present scenario due to Covid-19, the online education sector has witnessed rapid growth and is attracting a lot of new customers. Due to this rapid growth, many new companies have emerged in this industry. With the availability and ease of use of digital marketing resources, companies can reach out to a wider audience with their offerings. The customers who show interest in these offerings are termed as leads. There are various sources of obtaining leads for Edtech companies, like
 
 * The customer interacts with the marketing front on social media or other online platforms. 
 * The customer browses the website/app and downloads the brochure
@@ -14,10 +14,10 @@ The company then nurtures these leads and tries to convert them to paid customer
 
 ## Objective
 
-ExtraaLearn is an initial stage startup that offers programs on cutting-edge technologies to students and professionals to help them upskill/reskill. With a large number of leads being generated on a regular basis, one of the issues faced by ExtraaLearn is to identify which of the leads are more likely to convert so that they can allocate resources accordingly. You, as a data scientist at ExtraaLearn, have been provided the leads data to:
+ExtraaLearn is an initial-stage startup that offers programs on cutting-edge technologies to students and professionals to help them upskill/reskill. With a large number of leads being generated on a regular basis, one of the issues faced by ExtraaLearn is to identify which of the leads are more likely to convert so that they can allocate resources accordingly. You, as a data scientist at ExtraaLearn, have been provided the leads data to:
 * Analyze and build an ML model to help identify which leads are more likely to convert to paid customers, 
 * Find the factors driving the lead conversion process
-* Create a profile of the leads which are likely to convert
+* Create a profile of the leads who are likely to convert
 
 
 ## Data Description
@@ -28,16 +28,16 @@ The data contains the different attributes of leads and their interaction detail
 **Data Dictionary**
 * ID: ID of the lead
 * age: Age of the lead
-* current_occupation: Current occupation of the lead. Values include 'Professional','Unemployed',and 'Student'
-* first_interaction: How did the lead first interacted with ExtraaLearn. Values include 'Website', 'Mobile App'
-* profile_completed: What percentage of profile has been filled by the lead on the website/mobile app. Values include Low - (0-50%), Medium - (50-75%), High (75-100%)
+* current_occupation: Current occupation of the lead. Values include 'Professional', 'Unemployed', and 'Student'
+* first_interaction: How did the lead first interact with ExtraaLearn? Values include 'Website', 'Mobile App'
+* profile_completed: What percentage of the profile has been filled by the lead on the website/mobile app? Values include Low - (0-50%), Medium - (50-75%), High (75-100%)
 * website_visits: How many times has a lead visited the website
 * time_spent_on_website: Total time spent on the website
 * page_views_per_visit: Average number of pages on the website viewed during the visits.
 * last_activity: Last interaction between the lead and ExtraaLearn. 
-    * Email Activity: Seeking for details about program through email, Representative shared information with lead like brochure of program , etc 
-    * Phone Activity: Had a Phone Conversation with representative, Had conversation over SMS with representative, etc
-    * Website Activity: Interacted on live chat with representative, Updated profile on website, etc
+    * Email Activity: Seeking details about the program through email, the Representative shared information with a lead like a brochure of the program, etc 
+    * Phone Activity: Had a Phone Conversation with a representative, Had a conversation over SMS with a representative, etc
+    * Website Activity: Interacted on live chat with a representative, Updated profile on the website, etc
 
 * print_media_type1: Flag indicating whether the lead had seen the ad of ExtraaLearn in the Newspaper.
 * print_media_type2: Flag indicating whether the lead had seen the ad of ExtraaLearn in the Magazine.
@@ -49,7 +49,7 @@ The data contains the different attributes of leads and their interaction detail
 ## Importing necessary libraries and data
 
 
-```python
+```javascript
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -85,13 +85,13 @@ from sklearn.model_selection import GridSearchCV
 - Create a copy to use for data manipulation
 
 
-```python
+```javascript
 # Load the data - original data set
 customers = pd.read_csv('ExtraaLearn.csv')
 ```
 
 
-```python
+```javascript
 # create a copy of the data set to work with
 df = customers.copy()
 ```
@@ -104,8 +104,8 @@ df = customers.copy()
 - View the first and last five rows of the data
 
 
-```python
-#check that the data is loaded and to look at the dataframe
+```javascript
+#check that the data is loaded and look at the dataframe
 df.head()
 ```
 
@@ -245,7 +245,7 @@ df.head()
 
 
 
-```python
+```javascript
 # check the data last five rows
 df.tail()
 ```
@@ -386,7 +386,7 @@ df.tail()
 
 
 
-```python
+```javascript
 df.shape
 ```
 
@@ -398,7 +398,7 @@ df.shape
 
 
 
-```python
+```javascript
 df.info()
 ```
 
@@ -427,7 +427,7 @@ df.info()
     
 
 
-```python
+```javascript
 # find number of unique IDs
 df.ID.nunique()
 ```
@@ -442,13 +442,13 @@ df.ID.nunique()
 #### There are **4612 unique IDs**.  Each row is a unique ID therefore this column doesn't add value and can be dropped
 
 
-```python
+```javascript
 # drop the ID column
 df = df.drop(['ID'], axis = 1)
 ```
 
 
-```python
+```javascript
 # look at the first five rows again
 df.head()
 ```
@@ -583,7 +583,7 @@ df.head()
 
 
 
-```python
+```javascript
 df.shape
 ```
 
@@ -595,7 +595,7 @@ df.shape
 
 
 
-```python
+```javascript
 df.info()
 ```
 
@@ -641,15 +641,15 @@ df.info()
 1. Leads will have different expectations from the outcome of the course and the current occupation may play a key role in getting them to participate in the program. Find out how current occupation affects lead status.
 2. The company's first impression on the customer must have an impact. Do the first channels of interaction have an impact on the lead status? 
 3. The company uses multiple modes to interact with prospects. Which way of interaction works best? 
-4. The company gets leads from various channels such as print media, digital media, referrals, etc. Which of these channels have the highest lead conversion rate?
-5. People browsing the website or mobile application are generally required to create a profile by sharing their personal data before they can access additional information.Does having more details about a prospect increase the chances of conversion?
+4. The company gets leads from various channels such as print media, digital media, referrals, etc. Which of these channels has the highest lead conversion rate?
+5. People browsing the website or mobile application are generally required to create a profile by sharing their personal data before they can access additional information. Does having more details about a prospect increase the chances of conversion?
 
 ## Univariate Data Analysis
 
 ### Summary of all data columns
 
 
-```python
+```javascript
 # get a summary of the data
 df.describe(include = 'all').T
 ```
@@ -896,11 +896,11 @@ df.describe(include = 'all').T
 #### Percentage
 
 
-```python
+```javascript
 # Making a list of all categorical variables
 cat_col = list(df.select_dtypes("object").columns)
 
-# Printing percnetage of each unique value in each categorical column
+# Printing percentage of each unique value in each categorical column
 for column in cat_col:
     print(df[column].value_counts(normalize = True))
     print("-" * 50)
@@ -950,7 +950,7 @@ for column in cat_col:
 #### Count of each group within the categorical variables
 
 
-```python
+```javascript
 # Making a list of all categorical variables
 cat_col = list(df.select_dtypes("object").columns)
 
@@ -1031,7 +1031,7 @@ for column in cat_col:
 #### How many of the visitors are converted to customers
 
 
-```python
+```javascript
 #create a bar chart to determine the number of visitors which are converted to customers (1)
 plt.figure(figsize = (10, 6))
 
@@ -1041,12 +1041,7 @@ ax = sns.countplot(x = 'status', data = df)
 for p in ax.patches:
     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x(), p.get_height()))
 ```
-
-
-    
-![png](output_31_0.png)
-    
-
+<img src="customer_prediction/output_31_0.png?raw=true"/>
 
 ### Observation Summary
 The majority of the visitors are professionals (56.7%).  The website (55%) is the primary first interaction with ExtraaLearn.  Only 2% of the visitors have a low completion of the profile. Email (49%) is the highest last activity of the visitor.  Very few visitors have had interactions with ExtraaLearn through advertisements or referrals seen the newspaper ads (10%),  magazine ads (5%), digital media (11%), educational channels (15%) or have been referred (2%).
@@ -1066,7 +1061,7 @@ Only **1377 (approx 30%)** from a total of 4612 visitors are converted to custom
 #### Create box plots to determine if there are any outliers in the data.
 
 
-```python
+```javascript
 #create countplots and box plots to visualize data to identify the distribution and outliers
 
 for col in ['age', 'website_visits', 'time_spent_on_website', 'page_views_per_visit']:
@@ -1090,50 +1085,30 @@ for col in ['age', 'website_visits', 'time_spent_on_website', 'page_views_per_vi
     age
     The skew is : -0.72
     
-
-
-    
-![png](output_35_1.png)
-    
-
+<img src="customer_prediction/output_35_1.png?raw=true"/>
 
     website_visits
     The skew is : 2.16
     
-
-
-    
-![png](output_35_3.png)
-    
-
+<img src="customer_prediction/output_35_3.png?raw=true"/>
 
     time_spent_on_website
     The skew is : 0.95
     
-
-
-    
-![png](output_35_5.png)
-    
-
+<img src="customer_prediction/output_35_5.png?raw=true"/>
 
     page_views_per_visit
     The skew is : 1.27
     
-
-
-    
-![png](output_35_7.png)
-    
-
+<img src="customer_prediction/output_35_7.png?raw=true"/>
 
 ### Observations 
 <code>age</code>
 There is a negative skew (-0.72) with most visitors approx 55 years of age.  
 <code>website_visits</code>
-There is positive skew (2.16) with highest frequency visiting from 0 to 5 times decreasing from there. **The box plot shows outliers.**
+There is positive skew (2.16) with the highest frequency visiting from 0 to 5 times decreasing from there. **The box plot shows outliers.**
 <code>time_spent_on_website</code>
-There is a positive skew (0.95) with the highest frequency visitors spending between 0 and 250 on the site.  
+There is a positive skew (0.95) with the highest frequency of visitors spending between 0 and 250 on the site.  
 <code>page_views_per_visit</code>
 There is a positive skew (1.27) with the highest frequency of page views between 2.5 and 5.  **The box plot shows outliers.**
 
@@ -1143,7 +1118,7 @@ There is a positive skew (1.27) with the highest frequency of page views between
 - identified the outliers: lower limit < q1 - 1.5 * IQR and higher limit > q3 + 1.5 * IQR
 
 
-```python
+```javascript
 # defining the definition to identify outliers 
 def find_outliers_IQR(df):
     Q1 = df.quantile(0.25)
@@ -1154,7 +1129,7 @@ def find_outliers_IQR(df):
 ```
 
 
-```python
+```javascript
 #identifying the outliers for the website_visits
 
 outliers = find_outliers_IQR(df['website_visits'])
@@ -1192,7 +1167,7 @@ outliers
 
 
 
-```python
+```javascript
 #identifying the outliers for the page_views_per_visit
 
 outliers = find_outliers_IQR(df['page_views_per_visit'])
@@ -1233,25 +1208,16 @@ outliers
 - Will continue exploring the data to identify any relationships between the various variables. 
 
 
-```python
+```javascript
 # create a pair plot to see if there are any relationships 
-# distingueished the paiplot by adding the status as an additional parameter for the pairplot
+# distingueished the pairplot by adding the status as an additional parameter for the pairplot
 sns.pairplot(df, hue ='status')
 
 ```
 
-
-
-
     <seaborn.axisgrid.PairGrid at 0x7fe0cfa5de20>
 
-
-
-
-    
-![png](output_42_1.png)
-    
-
+<img src="customer_prediction/output_42_1.png?raw=true"/>
 
 ### Pairplot Summary
 Pairplot visualizes given data to find the relationship between them where the variables can be continuous or categorical.
@@ -1264,17 +1230,13 @@ There were no other major trends identified by the pairplot.
 ### <code>age</code>
 
 
-```python
+```javascript
 #visualize what the age means for creating a paying customer
 plt.figure(figsize = (15, 10))
 sns.boxplot(df["status"], df["age"])
 plt.show()
 ```
-
-
-    
-![png](output_45_0.png)
-    
+<img src="customer_prediction/output_45_0.png?raw=true"/>
 
 
 ### <code>current_occupation</code>
@@ -1284,21 +1246,16 @@ Analyze the data based on the <code>current_occupation</code>.
 - Look at the age of the visitors based on their <code>current_occupation</code>
 
 
-```python
+```javascript
 # visualize the current occupations of the visitors based on conversion
 plt.figure(figsize = (15, 10))
 sns.countplot(x = 'current_occupation', hue = 'status', data = df)
 plt.show()
 ```
+<img src="customer_prediction/output_47_0.png?raw=true"/>
 
 
-    
-![png](output_47_0.png)
-    
-
-
-
-```python
+```javascript
 #look at the age of the visitor by current occupation
 df.groupby(["current_occupation"])["age"].describe()
 ```
@@ -1386,118 +1343,92 @@ df.groupby(["current_occupation"])["age"].describe()
 
 
 
-```python
+```javascript
 # box plots of the age of the visitor grouped by the current occupation
 plt.figure(figsize = (10, 5))
 sns.boxplot(df["current_occupation"], df["age"])
 plt.show()
 ```
-
-
-    
-![png](output_49_0.png)
-    
-
+<img src="customer_prediction/output_49_0.png?raw=true"/>
 
 ### <code>first_interactions</code>
 
 
-```python
+```javascript
 # visualize the first_interactions of the visitors based on conversion
 plt.figure(figsize = (15, 10))
 sns.countplot(x = 'first_interaction', hue = 'status', data = df)
 plt.show()
 ```
-
-
-    
-![png](output_51_0.png)
-    
+<img src="customer_prediction/output_51_0.png?raw=true"/>
 
 
 ### <code>time_spent_on_website</code>
 
 
-```python
+```javascript
 # visualize the time_spent_on_website of the visitors based on conversion
 plt.figure(figsize = (10, 5))
 sns.boxplot(df["status"], df["time_spent_on_website"])
 plt.show()
 ```
-
-
-    
-![png](output_53_0.png)
-    
+<img src="customer_prediction/output_53_0.png?raw=true"/>
 
 
 ### <code>profile_completed</code>
 
 
-```python
+```javascript
 #visualize what the completion of the profile means for creating a paying customer
 plt.figure(figsize = (15, 10))
 sns.countplot(x = 'profile_completed', hue = 'status', data = df)
 plt.show()
 ```
-
-
-    
-![png](output_55_0.png)
-    
+<img src="customer_prediction/output_55_0.png?raw=true"/>
 
 
 ### <code>referral</code>
 
 
-```python
+```javascript
 #visualize what a referral means for creating a paying customer
 plt.figure(figsize = (15, 10))
 sns.countplot(x = 'referral', hue = 'status', data = df)
 plt.show()
 ```
-
-
-    
-![png](output_57_0.png)
-    
-
+<img src="customer_prediction/output_57_0.png?raw=true"/>
 
 ### Observations
 - <code>age</code>
 - Visitors that are higher in age have a higher propensity to become a paying customer.
 - <code>current_occupation</code>
-- Professionals visit the site more than unemployed and students.
+- Professionals visit the site more than the unemployed and students.
 - Professionals are also more likely to become paying customers
-- Students are the youngest demographic with the mean being 21.  The max age of the student is <=25.  
+- Students are the youngest demographic with the mean being 21.  The max-age of the student is <=25.  
 - The youngest professional is 25 (same age as the max student).
 - The professionals range from 25 - 60 years.  The Unemployed range from 32 to 63 years. 
 - <code>first_interactions</code>
-- More visitors first interaction is through the Mobile App, however there is a low conversion rate.  Those whose first interaction is through the website, have more which become customers.
+- More visitors' first interaction is through the Mobile App, however, there is a low conversion rate.  Those whose first interaction is through the website, have more who become customers.
 - <code>time_spent_on_website</code>
 -the blue represents those that did not convert to paying customers.  
-- It appears that the visitors which spend more time on the Website have more of a chance to convert to paying customers.
+- It appears that the visitors who spend more time on the Website have more of a chance to convert to paying customers.
 - <code>profile_completed</code>
 - It appears that those that have a high completion have the highest tendency to become paying customers.
 - <code>referral</code>
-- There were very few referral (2%) however they have a high percentage of conversion to paying customers.  It might be fair to say that if a person is referred to ExtraaLearn they will become a paying customer.
+- There were very few referrals (2%) however they have a high percentage of conversion to paying customers.  It might be fair to say that if a person is referred to ExtraaLearn they will become a paying customer.
 
 
 ### Correlation Heat Map
 
 
-```python
+```javascript
 # Correlation matrix (no grouping)
 plt.figure(figsize=(15,10))
 sns.heatmap(df.corr().round(2),annot=True)
 plt.title('Correlation matrix of data',fontsize = 30)
 plt.show()
 ```
-
-
-    
-![png](output_60_0.png)
-    
+<img src="customer_prediction/output_60_0.png?raw=true"/>
 
 
 ### Correlations Summary
@@ -1513,7 +1444,7 @@ plt.show()
 ### Encoding the data
 
 
-```python
+```javascript
 # Separating the target variable and other variables
 
 # make a copy called X which is a dataframe with "status" column removed
@@ -1524,7 +1455,7 @@ Y = df['status']
 ```
 
 
-```python
+```javascript
 # Creating dummy variables, drop_first=True is used to avoid redundant variables
 #pd.get_dummies => working on X dataframe converts all categorical variables into binary 1(yes) / 0(no).
 
@@ -1532,16 +1463,16 @@ X = pd.get_dummies(X, drop_first = True)
 ```
 
 
-```python
+```javascript
 # Splitting the data into train (70%) and test (30%) sets
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.30, random_state = 1)
 ```
 
 ## Shape 
-- Check the shape of the trainng and test sets of data after manipulation
+- Check the shape of the training and test sets of data after manipulation
 
 
-```python
+```javascript
 print("Shape of the training set: ", X_train.shape)   
 
 print("Shape of the test set: ", X_test.shape)
@@ -1595,7 +1526,7 @@ print(y_test.value_counts(normalize = True))
 **Also, let's create a function to calculate and print the classification report and confusion matrix so that we don't have to rewrite the same code repeatedly for each model.**
 
 
-```python
+```javascript
 # Function to print the classification report and get confusion matrix in a proper format
 
 def metrics_score(actual, predicted):
@@ -1620,7 +1551,7 @@ def metrics_score(actual, predicted):
 - Check the performance on both training and testing datasets (use metrics_score function)
 
 
-```python
+```javascript
 # Fitting the decision tree classifier on the training data
 d_tree =  DecisionTreeClassifier(random_state = 7)
 
@@ -1639,7 +1570,7 @@ d_tree.fit(X_train, y_train)
 ## Model Performance evaluation and improvement
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train1 = d_tree.predict(X_train)
 
@@ -1655,12 +1586,7 @@ metrics_score(y_train, y_pred_train1)
        macro avg       1.00      1.00      1.00      3228
     weighted avg       1.00      1.00      1.00      3228
     
-    
-
-
-    
-![png](output_78_1.png)
-    
+<img src="customer_prediction/output_78_1.png?raw=true"/>    
 
 
 #### Observations: 
@@ -1669,7 +1595,7 @@ Reading confusion matrix (clockwise):
 - True Positive: Predicting the lead will not convert the booking and the lead does not convert.
 - False Positive: Predicting the lead will not convert and the lead is converted.
 - True Negative: Predicting the lead will convert to a paid customer and the lead does convert.
-- False Negative: Predicting the lead will convert to a paid customer but the lead does not converted.
+- False Negative: Predicting the lead will convert to a paid customer but the lead does not convert.
 
 There is no error on the training set, i.e., each sample has been classified.
 
@@ -1678,7 +1604,7 @@ The model this perfectly on the training data, it is likely overfitted.
 - Let's check the performance on test data to see if the model is overfitting.
 
 
-```python
+```javascript
 # Checking performance on the testing data
 y_pred_test1 = d_tree.predict(X_test)
 
@@ -1694,12 +1620,7 @@ metrics_score(y_test, y_pred_test1)
        macro avg       0.78      0.78      0.78      1384
     weighted avg       0.81      0.81      0.81      1384
     
-    
-
-
-    
-![png](output_81_1.png)
-    
+<img src="customer_prediction/output_81_1.png?raw=true"/>    
 
 
 ### Observations:
@@ -1712,10 +1633,10 @@ metrics_score(y_test, y_pred_test1)
 
 We will use the class_weight hyperparameter with the value equal to {0: 0.3, 1: 0.7} which is **approximately** the opposite of the imbalance in the original data. 
 
-**This would tell the model that 1 is the important class here.**
+**This would tell the model that 1 is an important class here.**
 
 
-```python
+```javascript
 # Choose the type of classifier 
 d_tree_tuned = DecisionTreeClassifier(random_state = 7, class_weight = {0: 0.3, 1: 0.7})
 
@@ -1751,7 +1672,7 @@ d_tree_tuned.fit(X_train, y_train)
 We have tuned the model and fit the tuned model on the training data. Now, let's check the model performance on the training and testing data.
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train2 = d_tree_tuned.predict(X_train)
 
@@ -1767,12 +1688,7 @@ metrics_score(y_train, y_pred_train2)
        macro avg       0.78      0.83      0.79      3228
     weighted avg       0.84      0.80      0.81      3228
     
-    
-
-
-    
-![png](output_86_1.png)
-    
+<img src="customer_prediction/output_86_1.png?raw=true"/>    
 
 
 ### Observations
@@ -1781,7 +1697,7 @@ metrics_score(y_train, y_pred_train2)
 **Let's check the model performance on the testing data**
 
 
-```python
+```javascript
 # Checking performance on the testing data
 y_pred_test2 = d_tree_tuned.predict(X_test)
 
@@ -1797,36 +1713,26 @@ metrics_score(y_test, y_pred_test2)
        macro avg       0.77      0.82      0.78      1384
     weighted avg       0.83      0.80      0.80      1384
     
-    
-
-
-    
-![png](output_88_1.png)
-    
-
+<img src="customer_prediction/output_88_1.png?raw=true"/>    
 
 ### Observations
-- The tuned model has an testing f1-score of 72% and is no longer overfitteing and generalizes well.
+- The tuned model has a testing f1-score of 72% and is no longer overfitting and generalizes well.
 - The model has increased its recall to 86% which is well above precision.
-- Would like to increase general accuracy while maintaining similar racall to precision ratio.
+- Would like to increase general accuracy while maintaining similar recall to precision ratio.
 
 **Let's visualize the tuned decision tree and observe the decision rules:**
 
 
-```python
+```javascript
 #Visualize the tree
 features = list(X.columns)
 plt.figure(figsize = (20, 20))
 tree.plot_tree(d_tree_tuned, feature_names = features, filled = True, fontsize = 9, node_ids = True, class_names = True)
 plt.show()
 ```
+<img src="customer_prediction/output_91_0.png?raw=true"/>
 
-
-    
-![png](output_91_0.png)
-    
-
-
+ 
 **Blue represents those who converted to paying customers class = y[1]**
 
 **Orange represents those who did not convert to paying customers class = y[0]**
@@ -1844,7 +1750,7 @@ plt.show()
 **Let's look at the feature importance** of the tuned decision tree model
 
 
-```python
+```javascript
 # Importance of features in the tree building
 
 print (pd.DataFrame(d_tree_tuned.feature_importances_, columns = ['Importance'], index = X_train.columns).sort_values(by = 'Importance', ascending = False))
@@ -1870,7 +1776,7 @@ print (pd.DataFrame(d_tree_tuned.feature_importances_, columns = ['Importance'],
     
 
 
-```python
+```javascript
 # Plotting the feature importance
 importances = d_tree_tuned.feature_importances_
 indices = np.argsort(importances)
@@ -1881,12 +1787,7 @@ plt.yticks(range(len(indices)), [features[i] for i in indices])
 plt.xlabel('Relative Importance')
 plt.show()
 ```
-
-
-    
-![png](output_95_0.png)
-    
-
+<img src="customer_prediction/output_95_0.png?raw=true"/>
 
 ### Observations
 - There are **5 features** which are of **importance** in order:
@@ -1910,7 +1811,7 @@ plt.show()
 - Check the performance on both training and testing data (use metrics_score function)
 
 
-```python
+```javascript
 # Fitting the random forest tree classifier on the training data
 rf_estimator = RandomForestClassifier(random_state=7,criterion="entropy")
 
@@ -1927,7 +1828,7 @@ rf_estimator.fit(X_train,y_train)
 **Let's check the performance of the model on the training data**
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train3 = rf_estimator.predict(X_train)
 
@@ -1943,12 +1844,7 @@ metrics_score(y_train, y_pred_train3)
        macro avg       1.00      1.00      1.00      3228
     weighted avg       1.00      1.00      1.00      3228
     
-    
-
-
-    
-![png](output_101_1.png)
-    
+<img src="customer_prediction/output_101_0.png?raw=true"/>    
 
 
 ### Observations:
@@ -1960,7 +1856,7 @@ metrics_score(y_train, y_pred_train3)
 **Let's check the performance on the testing data**
 
 
-```python
+```javascript
 # Checking performance on the testing data
 y_pred_test3 = rf_estimator.predict(X_test)
 
@@ -1976,19 +1872,14 @@ metrics_score(y_test, y_pred_test3)
        macro avg       0.84      0.81      0.83      1384
     weighted avg       0.86      0.86      0.86      1384
     
-    
-
-
-    
-![png](output_103_1.png)
-    
+ <img src="customer_prediction/output_103_1.png?raw=true"/>   
 
 
 ### Observations:
 
-- Comparatively, the results from random forest classifier were decent on both training and testing data.
-- The model is back to being overfitted, not surprising given we are using a unrestrained random forest.
-- It has higher F1_Score and the precision on the testing data. The recall is lower, the opposite of our goal.
+- Comparatively, the results from the random forest classifier were decent on both training and testing data.
+- The model is back to being overfitted, not surprising given we are using an unrestrained random forest.
+- It has a higher F1_Score and precision on the testing data. The recall is lower, the opposite of our goal.
 
 **Let's see if we can get a better model by tuning the random forest classifier**
 
@@ -1999,7 +1890,7 @@ metrics_score(y_test, y_pred_test3)
 - We will not tune the criterion hyperparameter as we know from hyperparameter tuning for decision trees that entropy is a better splitting criterion for this data.
 
 
-```python
+```javascript
 # Choose the type of classifier
 rf_estimator_tuned = RandomForestClassifier(criterion = "entropy", random_state = 7)
 
@@ -2022,20 +1913,17 @@ rf_estimator_tuned_base = grid_obj.best_estimator_
 ```
 
 
-```python
+```javascript
 # Fitting the best algorithm to the training data
 rf_estimator_tuned.fit(X_train, y_train)
 ```
-
-
-
 
     RandomForestClassifier(criterion='entropy', random_state=7)
 
 
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train4 = rf_estimator_tuned_base.predict(X_train)
 
@@ -2051,21 +1939,16 @@ metrics_score(y_train, y_pred_train4)
        macro avg       0.86      0.85      0.85      3228
     weighted avg       0.88      0.88      0.88      3228
     
-    
-
-
-    
-![png](output_108_1.png)
-    
+  <img src="customer_prediction/output_108_1.png?raw=true"/>  
 
 
 ### Observations:
 
 - We can see that after hyperparameter tuning, the model is performing poorly on the train data as well.
-- We can try adding some other hyperparameters and/or changing values of some hyperparameters to tune the model and see if we can get better performance.
+- We can try adding some other hyperparameters and/or changing the values of some hyperparameters to tune the model and see if we can get better performance.
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_test4 = rf_estimator_tuned_base.predict(X_test)
 
@@ -2081,12 +1964,7 @@ metrics_score(y_test, y_pred_test4)
        macro avg       0.84      0.82      0.83      1384
     weighted avg       0.86      0.86      0.86      1384
     
-    
-
-
-    
-![png](output_110_1.png)
-    
+<img src="customer_prediction/output_110_1.png?raw=true"/>    
 
 
 ### Observations
@@ -2101,7 +1979,7 @@ metrics_score(y_test, y_pred_test4)
 - Try and increase performance and prioritize recall over precision
 
 
-```python
+```javascript
 # Choose the type of classifier 
 rf_estimator_tuned = RandomForestClassifier(criterion = "entropy", random_state = 7)
 
@@ -2130,9 +2008,6 @@ rf_estimator_tuned = grid_obj.best_estimator_
 rf_estimator_tuned.fit(X_train, y_train)
 ```
 
-
-
-
     RandomForestClassifier(class_weight='balanced', criterion='entropy',
                            max_depth=6, max_features=0.8, max_samples=0.9,
                            min_samples_leaf=25, n_estimators=120, random_state=7)
@@ -2142,7 +2017,7 @@ rf_estimator_tuned.fit(X_train, y_train)
 Let's check the performance of the tuned model
 
 
-```python
+```javascript
 # Checking performance on the training data
 y_pred_train5 = rf_estimator_tuned.predict(X_train)
 
@@ -2158,18 +2033,12 @@ metrics_score(y_train, y_pred_train5)
        macro avg       0.81      0.85      0.82      3228
     weighted avg       0.86      0.84      0.84      3228
     
-    
-
-
-    
-![png](output_115_1.png)
-    
-
+<img src="customer_prediction/output_115_1.png?raw=true"/>    
 
 Let's check the model performance on the test data
 
 
-```python
+```javascript
 # Checking performance on the test data
 y_pred_test5 = rf_estimator_tuned.predict(X_test)
 
@@ -2185,24 +2054,19 @@ metrics_score(y_test, y_pred_test5)
        macro avg       0.81      0.84      0.82      1384
     weighted avg       0.85      0.83      0.84      1384
     
-    
-
-
-    
-![png](output_117_1.png)
-    
+<img src="customer_prediction/output_117_1.png?raw=true"/>    
 
 
 ### Observations:
 
-- The model is no longer overfitted with a testing f1-score of 76% (equal to to the training accuracy), meaning it will generalize well.
-- The recall is near the highest at 85%, well above the precision of 68%. This is inline with our goals of reducing false negatives.
+- The model is no longer overfitted with a testing f1-score of 76% (equal to the training accuracy), meaning it will generalize well.
+- The recall is near the highest at 85%, well above the precision of 68%. This is in line with our goals of reducing false negatives.
 - While the recall of the tuned model is slightly higher at 86%, the model is overall weaker with an f1-score of 72%.
 
 ## Feature Importance - Random Forest
 
 
-```python
+```javascript
 importances = rf_estimator_tuned.feature_importances_
 
 indices = np.argsort(importances)
@@ -2221,16 +2085,12 @@ plt.xlabel('Relative Importance')
 
 plt.show()
 ```
-
-
-    
-![png](output_120_0.png)
-    
+<img src="customer_prediction/output_120_0.png?raw=true"/>
 
 
 ### Observations:
 
-- Similar to the decision tree model, time spent on website, first_interaction_website, profile_completed, and age are the top four features that help distinguish between not converted and converted leads.
+- Similar to the decision tree model, time spent on the website, first_interaction_website, profile_completed, and age are the top four features that help distinguish between not converted and converted leads.
 - Unlike the decision tree, the random forest gives some importance to other variables like occupation, page_views_per_visit, as well. This implies that the random forest is giving importance to more factors in comparison to the decision tree.
 
 ## Actionable Insights and Recommendations
@@ -2243,15 +2103,15 @@ False Negatives: Predicting a visitor will not convert to a paying customer but 
 **Process**
 
 - The data was loaded into the Notebook.
-- An exploratory data analysis was performed to identify missing values, outliers, preparing the data for analysis, reviewing univariate and bivariate data analysis and visualizing the variables.   
-- A decision tree based model and a random forest model were created which can predict if a visitor is likely to be converted to a paid customer. 
-- This can be used by the company to predict which visitors are likely to be converted to paying customers thereby plan their marketing strategies
+- An exploratory data analysis was performed to identify missing values, and outliers, prepare the data for analysis, review univariate and bivariate data analysis and visualize the variables.   
+- A decision tree-based model and a random forest model were created which can predict if a visitor is likely to be converted to a paid customer. 
+- This can be used by the company to predict which visitors are likely to be converted to paying customers thereby planning their marketing strategies
 - Training and Testing sets were created and run to determine the best model fit.
 
 _Two models performed very well:_
-1. Tuned Model - recall 86%, f1-score 72% and macro average 82%
+1. Tuned Model - recall 86%, f1-score 72%, and macro average 82%
 
-2. Hyper Tuned Random Forest Model - recall 85%, f1-score 76% and macro average 84%
+2. Hyper Tuned Random Forest Model - recall 85%, f1-score 76%, and macro average 84%
 
 ## Conclusions:
 
@@ -2276,10 +2136,10 @@ The **Hyper Tuned Random Forest Model** is recommended for future use as it had 
 
 ExtraaLearn's Representatives should prioritize visitors based on:
 1. The visitors <code>time_spent_on_website</code>.
-- This was the top feature for both models on determining if a visitor would convert to a paying customer or not.  
+- This was the top feature for both models in determining if a visitor would convert to a paying customer or not.  
 
 2. The visitors <code>first_interaction</code> on the website.
-- If a visitors first interaction was on the website instead of the app they were more like to become paying customers.  Therefore this should be another point for the representatives to pay attention to when deciding on the amount of time to dedicate to a visitor.
+- If a visitor's first interaction was on the website instead of the app they were more like to become paying customers.  Therefore this should be another point for the representatives to pay attention to when deciding on the amount of time to dedicate to a visitor.
 
 3. The visitors <code>profile_completed</code>
 - If the visitor has been identified as a medium for the completion of the profile they are more likely to convert to a paying customer.  
@@ -2287,11 +2147,5 @@ ExtraaLearn's Representatives should prioritize visitors based on:
 4. The visitors <code>age</code>
 - If a visitor is within the identified age of 45 - 55 years then they are more likely to convert to becoming a paying customer.   
 
-- Visitors which meet these criteria as demonstrated in order ExtraaLearn will be able to decide where to focus their time when talking with new visitors.  
-- This will allow the business to make better use of their time when pursuing and converting leads into paying customers.
-
-
-
-```python
-
-```
+- Visitors who meet these criteria as demonstrated in order ExtraaLearn will be able to decide where to focus their time when talking with new visitors.  
+- This will allow the business to make better use of its time when pursuing and converting leads into paying customers.
