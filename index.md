@@ -7,6 +7,7 @@
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 #### Objective
 - Perform data analysis to find insights and make recommendations on what will help the company to improve the business. <br><br>
+
 [FoodHub (Markdown_File)](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
