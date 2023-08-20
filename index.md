@@ -1,17 +1,16 @@
 ## Portfolio
 
 ---
+<img src="images/Title Page.jpg?raw=true"/>
 
 ### Data Analysis for Business Recommendations 
 - Python is used to analyze and visualize data in order to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 #### Objective
 - Perform data analysis to what will help the company to improve the business.
-
 [FoodHub (Markdown_File)](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
-<img src="images/Title Page.jpg?raw=true"/>
 
 ---
 ### Practical Data Science - Machine Learning Models 
@@ -56,7 +55,7 @@ and national policies;
 3. analysis of gaps in both core and supplemental materials; and
 4. recommendations for addressing the needs in upper primary mathematics including pedagogical 
 and curricular needs.
-- [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
+[5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
 ---
 ### Quantitative and Qualitative Research - Survey 
 ### Survey Analysis Report- Upper Primary 
@@ -70,9 +69,9 @@ questions, consisting of three types of questions: closed, free response, and pr
 The purpose of the study was to investigate: 
 1. What are teacher beliefs regarding the nature of mathematics?
 2. What is their pedagogical knowledge of teaching English learners?
-3. What are their beliefs regarding teaching math to English learners
-- [Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf)
-- [Survey](pdf/Survey in word document v7.pdf)
+3. What are their beliefs regarding teaching math to English learners?
+[Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf)
+[Survey](pdf/Survey in word document v7.pdf)
 ---
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
