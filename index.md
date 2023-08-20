@@ -58,7 +58,6 @@ and national policies;
 and curricular needs.
 - [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
 ---
-
 ### Quantitative and Qualitative Research - Survey 
 ### Survey Analysis Report- Upper Primary 
 - Created a survey to gather insights from 121 teachers
@@ -70,7 +69,8 @@ The purpose of the study was to investigate:
 2. What is their pedagogical knowledge of teaching English learners?
 3. What are their beliefs regarding teaching math to English learners
 - [Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf)
-- [Survey](pdf/)
+- [Survey](pdf/Survey in word document v7.pdf)
+---
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
 
