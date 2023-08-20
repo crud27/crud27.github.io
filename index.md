@@ -44,9 +44,20 @@
 
 ---
 
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
+### Qualitative Research
+### 5 Country Survey for Upper Primary Mathematics (Grades 4 - 6) 
+- Researched the upper primary mathematics education system in 5 countries: Kenya, Tanzania, Uganda, Indonesia, and Pakistan
+- Qualitative analysis by retrieving and aggregating data from multiple sources and compiling it into a digestible and actionable format 
+### Objective
+- The focus of the study was to investigate the following areas:
+1. existing teaching and learning standards, materials, and national policies;
+2. exploration and analysis of the pedagogical quality of existing materials, performance standards 
+and national policies;
+3. analysis of gaps in both core and supplemental materials; and
+4. recommendations for addressing the needs in upper primary mathematics including pedagogical 
+and curricular needs.
+- [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
+  
 - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
