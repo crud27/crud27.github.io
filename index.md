@@ -44,10 +44,10 @@
 
 ---
 
-### Qualitative Research
+### Qualitative Research - Writing Sample
 ### 5 Country Survey for Upper Primary Mathematics (Grades 4 - 6) 
 - Researched the upper primary mathematics education system in 5 countries: Kenya, Tanzania, Uganda, Indonesia, and Pakistan
-- Qualitative analysis by retrieving and aggregating data from multiple sources and compiling it into a digestible and actionable format 
+- Qualitative analysis by retrieving and aggregating data from over 75 sources and compiling it into a digestible and actionable format 
 ### Objective
 - The focus of the study was to investigate the following areas:
 1. existing teaching and learning standards, materials, and national policies;
@@ -57,8 +57,19 @@ and national policies;
 4. recommendations for addressing the needs in upper primary mathematics including pedagogical 
 and curricular needs.
 - [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
-  
-- [Project 2 Title](http://example.com/)
+---
+
+### Quantitative and Qualitative Research - Survey 
+### Survey Analysis Report- Upper Primary 
+- Created a survey to gather insights from 121 teachers
+- One hundred and twenty-one teachers participated in piloting the survey of 50 
+questions, consisting of three types of questions: closed, free response, and problem-solving.
+### Objective
+The purpose of the study was to investigate: 
+1. What are teacher beliefs regarding the nature of mathematics?
+2. What is their pedagogical knowledge of teaching English learners?
+3. What are their beliefs regarding teaching math to English learners
+- [Survey Analysis Report](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
