@@ -69,8 +69,8 @@ The purpose of the study was to investigate:
 1. What are teacher beliefs regarding the nature of mathematics?
 2. What is their pedagogical knowledge of teaching English learners?
 3. What are their beliefs regarding teaching math to English learners
-- [Survey Analysis Report](http://example.com/)
-- [Project 3 Title](http://example.com/)
+- [Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf)
+- [Survey](pdf/)
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
 
