@@ -63,6 +63,9 @@ and curricular needs.
 - Created a survey to gather insights from 121 teachers
 - One hundred and twenty-one teachers participated in piloting the survey of 50 
 questions, consisting of three types of questions: closed, free response, and problem-solving.
+### Analysis Tools
+- Excel
+- XLStat
 ### Objective
 The purpose of the study was to investigate: 
 1. What are teacher beliefs regarding the nature of mathematics?
