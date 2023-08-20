@@ -1,19 +1,19 @@
 ## Portfolio
 
 ---
-<img src="images/Title Page.jpg?raw=true"/>
-
+<img src="images/Title Page.jpg?raw=true"/> <br><br>
 ### Data Analysis for Business Recommendations 
 - Python is used to analyze and visualize data in order to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 #### Objective
-- Perform data analysis to what will help the company to improve the business.
+- Perform data analysis to find insights and make recommendations on what will help the company to improve the business. <br><br>
 [FoodHub (Markdown_File)](/food_hub.md) <br><br>
 [FoodHub Presentation](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
 [FoodHub Jupyter Notebook](/Foodhub_Project_FullCode_corrected.ipynb) <br><br>
 
 ---
 ### Practical Data Science - Machine Learning Models 
+<img src="images/Decision_Tree_Diag.png?raw=true"/> <br><br>
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
@@ -24,10 +24,10 @@
 
 [ExtraaLearn (Markdown_File)](/Potential_Customers.md) <br><br>
 [ExtraaLearn Jupyter Notebook](/Potential_Customers_Prediction_FC.ipynb) <br><br>
-<img src="images/Decision_Tree_Diag.png?raw=true"/>
 
 ---
 ### Practical Data Science 2 - Machine Learning Models 
+<img src="images/Loan Default Prediction Title page.jpg?raw=true"/> <br><br>
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
@@ -39,7 +39,6 @@
 [Customer Loan Default Prediction (Markdown_File)](/Cap_Project_Loan_Default_Prediction_FC_CR.md) <br><br>
 [Customer Loan Default Prediction Presentation](/pdf/Loan Default Predictionu.pdf) <br><br>
 [Customer Loan Default Prediction Jupyter Notebook](/Cap_Project_Loan_Default_Prediction_FC_CR.ipynb)
-<img src="images/Loan Default Prediction Title page.jpg?raw=true"/>
 
 ---
 
@@ -54,7 +53,7 @@
 and national policies;
 3. analysis of gaps in both core and supplemental materials; and
 4. recommendations for addressing the needs in upper primary mathematics including pedagogical 
-and curricular needs.
+and curricular needs.<br><br>
 [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
 ---
 ### Quantitative and Qualitative Research - Survey 
@@ -69,12 +68,10 @@ questions, consisting of three types of questions: closed, free response, and pr
 The purpose of the study was to investigate: 
 1. What are teacher beliefs regarding the nature of mathematics?
 2. What is their pedagogical knowledge of teaching English learners?
-3. What are their beliefs regarding teaching math to English learners?
-[Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf)
+3. What are their beliefs regarding teaching math to English learners?<br><br>
+[Survey Analysis Report](pdf/Survey Analysis Report Upper Primary Grades v5.pdf) <br><br>
 [Survey](pdf/Survey in word document v7.pdf)
 ---
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
 
 ---
 
