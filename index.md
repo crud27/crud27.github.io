@@ -18,7 +18,7 @@
 ### Customer Prediction
 <img src="images/Decision_Tree_Diag.png?raw=true"/> <br><br>
 ### Decision Tree and Random Forest for Business Recommendations 
-- Python is used to analyze, visualize and build a model to predict potential customers
+- Python is used to analyze, visualize, and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
 #### Objective
 - Analyze and build an ML model to help identify which leads are more likely to convert to paid customers,
@@ -33,7 +33,7 @@
 ### Customer Loan Default Prediction
 <img src="images/Loan Default Prediction Title page.jpg?raw=true"/> <br><br>
 ### Decision Tree and Random Forest for Business Recommendations 
-- Python is used to analyze, visualize and build a model to predict potential customers
+- Python is used to analyze, visualize, and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
 #### Objective
 - Analyze and build a classification model to predict clients who are likely to default on their loan
@@ -52,11 +52,11 @@
 - Qualitative analysis by retrieving and aggregating data from over 75 sources and compiling it into a digestible and actionable format <br><br>
 #### Objective
 - The focus of the study was to investigate the following areas:
-1. existing teaching and learning standards, materials, and national policies;
-2. exploration and analysis of the pedagogical quality of existing materials, performance standards 
+1. Existing teaching and learning standards, materials, and national policies;
+2. Exploration and analysis of the pedagogical quality of existing materials, performance standards, 
 and national policies;
-3. analysis of gaps in both core and supplemental materials; and
-4. recommendations for addressing the needs in upper primary mathematics including pedagogical 
+3. Analysis of gaps in both core and supplemental materials; and
+4. Recommendations for addressing the needs in upper primary mathematics including pedagogical 
 and curricular needs.<br><br>
 
 [5 Country Survey](pdf/5 country survey for upper primary mathematics RTI v6.pdf)
