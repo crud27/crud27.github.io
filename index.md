@@ -6,7 +6,7 @@
 ### Data Analysis for Business Recommendations 
 - Python is used to analyze and visualize data in order to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
-#### Objective
+### Objective
 - Perform data analysis to find insights and make recommendations on what will help the company to improve the business. <br><br>
 
 [FoodHub (Markdown_File)](/food_hub.md) <br><br>
@@ -20,7 +20,7 @@
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize, and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
-#### Objective
+### Objective
 - Analyze and build an ML model to help identify which leads are more likely to convert to paid customers,
 - Find the factors driving the lead conversion process
 - Create a profile of the leads who are likely to convert
@@ -35,7 +35,7 @@
 ### Decision Tree and Random Forest for Business Recommendations 
 - Python is used to analyze, visualize, and build a model to predict potential customers
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn <br><br>
-#### Objective
+### Objective
 - Analyze and build a classification model to predict clients who are likely to default on their loan
 - Identify important features to consider while approving a loan.
 - Give recommendations to the bank on the profile of the persons who are likely to default on their loan
@@ -50,7 +50,7 @@
 ### 5 Country Survey for Upper Primary Mathematics (Grades 4 - 6) 
 - Researched the upper primary mathematics education system in 5 countries: Kenya, Tanzania, Uganda, Indonesia, and Pakistan
 - Qualitative analysis by retrieving and aggregating data from over 75 sources and compiling it into a digestible and actionable format <br><br>
-#### Objective
+### Objective
 - The focus of the study was to investigate the following areas:
 1. Existing teaching and learning standards, materials, and national policies;
 2. Exploration and analysis of the pedagogical quality of existing materials, performance standards, 
@@ -71,7 +71,7 @@ questions, consisting of three types of questions: closed, free response, and pr
 ### Analysis Tools
 - Excel
 - XLStat <br><br>
-#### Objective
+### Objective
 The purpose of the study was to investigate: 
 1. What are teacher beliefs regarding the nature of mathematics?
 2. What is their pedagogical knowledge of teaching English learners?
