@@ -81,7 +81,10 @@ The purpose of the study was to investigate:
 [Survey](pdf/Survey in word document v7.pdf)
 
 ---
+### Professional Certificates
+[Certified Scrum Master (CSM)](/pdf/Carla A. Rudder-ScrumAlliance_CSM_Certificate(1).pdf) <br><br>
 
+[Google Data Analytics Certificate](/pdf/Carla A. Rudder-ScrumAlliance_CSM_Certificate(1).pdf) <br><br>
 ---
 
 
