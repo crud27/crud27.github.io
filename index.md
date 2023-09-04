@@ -4,7 +4,7 @@
 ### Food Delivery Service Business Analysis
 <img src="images/Title Page.jpg?raw=true"/> <br><br>
 ### Data Analysis for Business Recommendations 
-- Python is used to analyze and visualize data in order to make business recommendations
+- Python is used to analyze and visualize data to make business recommendations
 - Python Libraries: Pandas, Numpy, Matplotlib, Seaborn <br><br>
 ### Objective
 - Perform data analysis to find insights and make recommendations on what will help the company to improve the business. <br><br>
