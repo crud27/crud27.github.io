@@ -84,7 +84,14 @@ The purpose of the study was to investigate:
 ### Professional Certificates
 [Certified Scrum Master (CSM)](/pdf/Carla A. Rudder-ScrumAlliance_CSM_Certificate(1).pdf) <br><br>
 
-[Google Data Analytics Certificate](/pdf/Carla A. Rudder-ScrumAlliance_CSM_Certificate(1).pdf) <br><br>
+[Google Data Analytics Certificate](/pdf/Google Data Analysis Prof Certificate 4WAL64UPERYG.pdf) <br><br>
+
+[SQL for Data Science](/pdf/SQL Basics for DS Specialization WD7W8LCKKBHD.pdf) <br><br>
+
+[IBM Data Science Fundamentals with Python and SQL](/pdf/Data Science Fundamentals with Python and SQL -Specialization JTBR8W6BBD86.pdf) <br><br>
+
+[PowerBI](/pdf/Dashboard in a Day PowerBI certficate.pdf) <br><br>
+
 ---
 
 
