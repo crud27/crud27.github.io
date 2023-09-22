@@ -1,5 +1,5 @@
 ## Resume
-[Resume](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
+[Resume](pdf/C_Rudder_DS_ Resume_18_Sep.pdf) <br><br>
 
 ---
 ## Portfolio
