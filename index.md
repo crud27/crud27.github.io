@@ -1,3 +1,7 @@
+## Resume
+[Resume](/pdf/FoodHub Data Analysis and Recommendations.pdf) <br><br>
+
+---
 ## Portfolio
 
 ---
