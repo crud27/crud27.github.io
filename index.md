@@ -1,5 +1,5 @@
 ## Resume
-[Resume](pdf/C_Rudder_DS_ Resume_18_Sep.pdf) <br><br>
+[Resume](pdf/C_Rudder_Data_PMP_US.pdf) <br><br>
 
 ---
 ## Portfolio
