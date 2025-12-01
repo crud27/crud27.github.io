@@ -14,7 +14,7 @@ masthead_title: # overrides the website title displayed in the masthead, use " "
 # Site Author
 author:
   name: "Carla Rudder, Ph.D., PMP"
-  avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/bio-photo.jpg"
   bio: "PMP-certified data-driven decision maker specializing in machine learning, statistical modeling, and translating data into actionable insights across international education and research."
   location: "Raleigh, NC"
   email: "carla.amoi@gmail.com"
