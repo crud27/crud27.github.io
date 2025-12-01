@@ -21,14 +21,14 @@ tags:
   - Visualization
   - Food Services
 gallery:
-  - url: /assets/images/foodhub-viz1.jpg
-    image_path: /assets/images/foodhub-viz1.jpg
+  - url: /assets/images/foodhub-viz1.png
+    image_path: /assets/images/foodhub-viz1.png
     alt: "Revenue Distribution"
-  - url: /assets/images/foodhub-viz2.jpg
-    image_path: /assets/images/foodhub-viz2.jpg
+  - url: /assets/images/foodhub-viz2.png
+    image_path: /assets/images/foodhub-viz2.png
     alt: "Delivery Time Analysis"
-  - url: /assets/images/foodhub-viz3.jpg
-    image_path: /assets/images/foodhub-viz3.jpg
+  - url: /assets/images/foodhub-viz3.png
+    image_path: /assets/images/foodhub-viz3.png
     alt: "Customer Ratings"
 ---
 

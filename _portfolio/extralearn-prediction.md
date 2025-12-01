@@ -396,7 +396,7 @@ Therefore: **Prioritize Recall** ✅
 
 | Resource | Description |
 |----------|-------------|
-| 📓 [**Jupyter Notebook**](/Potential_Customers_Prediction_FC__1_.ipynb) | Complete Python code with analysis and visualizations |
+| 📓 [**Jupyter Notebook**](/Potential_Customers_Prediction_FC.ipynb) | Complete Python code with analysis and visualizations |
 | 📊 [**Detailed Analysis**](/Potential_Customers.html) | Full exploratory analysis with insights |
 | 🎯 **Production Model** | Trained Random Forest ready for deployment |
 
