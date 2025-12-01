@@ -163,7 +163,7 @@ collections:
     permalink: /:collection/:path/
 
 # Theme Settings
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air" # Using "air" as base - we'll customize with your colors
 
 # Analytics
