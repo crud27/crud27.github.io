@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Carla Rudder Custom Skin
+   ========================================================================== */
+
+/* Colors */
+$ink-black: #0d1b2a !default;
+$prussian-blue: #1b263b !default;
+$dusk-blue: #415a77 !default;
+$lavender-grey: #778da9 !default;
+$alabaster-grey: #e0e1dd !default;
+
+/* Base colors */
+$background-color: $alabaster-grey !default;
+$text-color: $ink-black !default;
+$muted-text-color: $dusk-blue !default;
+$primary-color: $prussian-blue !default;
+$border-color: mix(#fff, $lavender-grey, 75%) !default;
+$footer-background-color: $prussian-blue !default;
+$link-color: $dusk-blue !default;
+$link-color-hover: mix(#000, $link-color, 25%) !default;
+$link-color-visited: mix(#fff, $link-color, 25%) !default;
+$masthead-link-color: $alabaster-grey !default;
+$masthead-link-color-hover: mix(#000, $masthead-link-color, 20%) !default;
+$navicon-link-color-hover: mix(#000, $primary-color, 30%) !default;
+
+/* Notices */
+$notice-background-mix: 80% !default;
+$code-notice-background-mix: 90% !default;
+
+/* Syntax highlighting (base16) - using your color scheme */
+$base00: $ink-black !default;
+$base01: $prussian-blue !default;
+$base02: $dusk-blue !default;
+$base03: $lavender-grey !default;
+$base04: $alabaster-grey !default;
+$base05: lighten($lavender-grey, 5%) !default;
+$base06: lighten($alabaster-grey, 5%) !default;
+$base07: #ffffff !default;
+$base08: #e74c3c !default;
+$base09: #e67e22 !default;
+$base0a: #f39c12 !default;
+$base0b: #27ae60 !default;
+$base0c: #16a085 !default;
+$base0d: $dusk-blue !default;
+$base0e: #8e44ad !default;
+$base0f: #c0392b !default;
+
+/* Override default Minimal Mistakes skin colors */
+.masthead {
+  background: $prussian-blue;
+  border-bottom: 2px solid $ink-black;
+}
+
+.site-title {
+  color: $alabaster-grey;
+}
+
+.site-subtitle {
+  color: $lavender-grey;
+}
+
+.greedy-nav {
+  background: $prussian-blue;
+  
+  a {
+    color: $alabaster-grey;
+    
+    &:hover {
+      color: $lavender-grey;
+    }
+  }
+  
+  .visible-links a:before {
+    background: $lavender-grey;
+  }
+}
+
+.page__footer {
+  background: $prussian-blue;
+  color: $alabaster-grey;
+  
+  a {
+    color: $lavender-grey;
+    
+    &:hover {
+      color: $alabaster-grey;
+    }
+  }
+}
+
+/* Buttons */
+.btn {
+  &--primary {
+    background-color: $dusk-blue;
+    border-color: $dusk-blue;
+    
+    &:hover {
+      background-color: $prussian-blue;
+      border-color: $prussian-blue;
+    }
+  }
+  
+  &--inverse {
+    background-color: $ink-black;
+    border-color: $ink-black;
+  }
+}
+
+/* Page elements */
+.page__title {
+  color: $ink-black;
+}
+
+.page__lead {
+  color: $dusk-blue;
+}
+
+.archive__item-title {
+  color: $prussian-blue;
+  
+  &:hover {
+    color: $dusk-blue;
+  }
+}
+
+.archive__item-excerpt {
+  color: $dusk-blue;
+}
+
+/* Tags and taxonomy */
+.page__taxonomy-item {
+  background-color: $lavender-grey;
+  border: 1px solid $lavender-grey;
+  
+  &:hover {
+    background-color: $dusk-blue;
+    border-color: $dusk-blue;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  .author__avatar {
+    img {
+      border: 3px solid $lavender-grey;
+    }
+  }
+  
+  .author__name {
+    color: $ink-black;
+  }
+  
+  .author__bio {
+    color: $dusk-blue;
+  }
+  
+  .author__urls {
+    color: $dusk-blue;
+    
+    a {
+      color: $dusk-blue;
+      
+      &:hover {
+        color: $prussian-blue;
+      }
+    }
+  }
+}
+
+/* Feature rows */
+.feature__item {
+  border: 2px solid lighten($lavender-grey, 20%);
+  
+  &:hover {
+    border-color: $lavender-grey;
+    box-shadow: 0 0 20px rgba($dusk-blue, 0.15);
+  }
+}
+
+/* Tables */
+table {
+  thead {
+    background-color: $prussian-blue;
+    color: $alabaster-grey;
+  }
+  
+  tr {
+    border-bottom: 1px solid lighten($lavender-grey, 20%);
+    
+    &:hover {
+      background-color: lighten($alabaster-grey, 3%);
+    }
+  }
+}
+
+/* Code blocks */
+code {
+  background-color: lighten($alabaster-grey, 3%);
+  border: 1px solid $lavender-grey;
+}
+
+pre {
+  background-color: lighten($alabaster-grey, 3%);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid $dusk-blue;
+  background-color: lighten($alabaster-grey, 3%);
+}
+
+/* Navigation */
+.pagination {
+  a {
+    color: $dusk-blue;
+    border: 1px solid $lavender-grey;
+    
+    &:hover {
+      background-color: $dusk-blue;
+      color: $alabaster-grey;
+    }
+  }
+  
+  .current {
+    background-color: $prussian-blue;
+    color: $alabaster-grey;
+  }
+}
+
+/* Notice boxes */
+.notice {
+  background-color: lighten($alabaster-grey, 3%);
+  border: 1px solid $lavender-grey;
+  
+  &--primary {
+    border-left: 4px solid $prussian-blue;
+  }
+  
+  &--info {
+    border-left: 4px solid $dusk-blue;
+  }
+}
+
+/* Overlay headers */
+.page__hero--overlay {
+  background-color: $prussian-blue;
+  background-image: linear-gradient(to bottom, rgba($ink-black, 0.3), rgba($prussian-blue, 0.7));
+}

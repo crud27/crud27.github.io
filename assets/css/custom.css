@@ -1,0 +1,324 @@
+/* ==========================================================================
+   Custom Color Scheme for Carla Rudder Portfolio
+   ========================================================================== */
+
+/* Color Palette:
+   Ink Black (accent): #0d1b2a
+   Prussian Blue (10%): #1b263b
+   Dusk Blue (10%): #415a77
+   Lavender Grey (20%): #778da9
+   Alabaster Grey (60%): #e0e1dd
+*/
+
+/* Primary Colors */
+$background-color: #e0e1dd !default;
+$text-color: #0d1b2a !default;
+$primary-color: #1b263b !default;
+$link-color: #415a77 !default;
+$link-color-hover: #1b263b !default;
+
+/* Masthead */
+.masthead {
+  background-color: #1b263b;
+  border-bottom: 3px solid #0d1b2a;
+}
+
+.site-title {
+  color: #e0e1dd !important;
+}
+
+.site-subtitle {
+  color: #778da9;
+}
+
+.masthead__menu-item {
+  color: #e0e1dd !important;
+}
+
+.masthead__menu-item:hover {
+  color: #778da9 !important;
+}
+
+/* Links */
+a {
+  color: #415a77;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1b263b;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  background-color: #1b263b;
+  color: #e0e1dd !important;
+  border: 2px solid #1b263b;
+}
+
+.btn:hover {
+  background-color: #0d1b2a;
+  border-color: #0d1b2a;
+  color: #e0e1dd !important;
+}
+
+.btn--primary {
+  background-color: #415a77;
+  border-color: #415a77;
+}
+
+.btn--primary:hover {
+  background-color: #1b263b;
+  border-color: #1b263b;
+}
+
+/* Page Headers */
+.page__title {
+  color: #0d1b2a;
+  border-bottom: 3px solid #415a77;
+  padding-bottom: 0.5rem;
+}
+
+.page__lead {
+  color: #415a77;
+}
+
+/* Archive Items (Project Cards) */
+.archive__item-title {
+  color: #1b263b;
+}
+
+.archive__item-title:hover {
+  color: #415a77;
+}
+
+.archive__item-excerpt {
+  color: #415a77;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f5f5f5;
+  border-left: 3px solid #778da9;
+}
+
+.sidebar__right {
+  background-color: #f5f5f5;
+}
+
+.author__avatar img {
+  border: 3px solid #778da9;
+}
+
+.author__name {
+  color: #0d1b2a;
+}
+
+.author__bio {
+  color: #415a77;
+}
+
+/* Author Profile Links */
+.author__urls a {
+  color: #415a77;
+}
+
+.author__urls a:hover {
+  color: #1b263b;
+}
+
+/* Footer */
+.page__footer {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  border-top: 3px solid #0d1b2a;
+}
+
+.page__footer a {
+  color: #778da9;
+}
+
+.page__footer a:hover {
+  color: #e0e1dd;
+}
+
+/* Tags */
+.page__taxonomy-item {
+  background-color: #778da9;
+  color: #e0e1dd;
+  border: none;
+}
+
+.page__taxonomy-item:hover {
+  background-color: #415a77;
+  color: #e0e1dd;
+}
+
+/* Feature Rows (Project Showcase) */
+.feature__item {
+  background-color: #ffffff;
+  border: 2px solid #e0e1dd;
+  transition: all 0.3s ease;
+}
+
+.feature__item:hover {
+  border-color: #778da9;
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
+  transform: translateY(-4px);
+}
+
+.feature__item-teaser {
+  border-bottom: 3px solid #778da9;
+}
+
+/* Page Content */
+.page__content h2 {
+  color: #1b263b;
+  border-bottom: 2px solid #778da9;
+  padding-bottom: 0.3rem;
+}
+
+.page__content h3 {
+  color: #415a77;
+}
+
+/* Tables */
+table {
+  border: 2px solid #778da9;
+}
+
+th {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  border: 1px solid #0d1b2a;
+}
+
+td {
+  border: 1px solid #e0e1dd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Code Blocks */
+code {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e1dd;
+  color: #1b263b;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border: 2px solid #778da9;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #415a77;
+  background-color: #f5f5f5;
+  color: #415a77;
+}
+
+/* Navigation */
+.pagination a {
+  color: #415a77;
+  border: 2px solid #778da9;
+}
+
+.pagination a:hover {
+  background-color: #415a77;
+  color: #e0e1dd;
+  border-color: #415a77;
+}
+
+/* Notice Boxes */
+.notice {
+  background-color: #f5f5f5;
+  border: 2px solid #778da9;
+  border-left: 4px solid #415a77;
+}
+
+.notice--primary {
+  border-left-color: #1b263b;
+}
+
+.notice--info {
+  border-left-color: #415a77;
+}
+
+.notice--success {
+  border-left-color: #48bb78;
+}
+
+/* Overlay Headers */
+.page__hero--overlay {
+  background-color: #1b263b;
+}
+
+.page__hero-title {
+  color: #e0e1dd;
+  text-shadow: 2px 2px 4px rgba(13, 27, 42, 0.8);
+}
+
+.page__hero-caption {
+  color: #778da9;
+}
+
+/* Skills Badges (if you use them) */
+img[alt*="badge"] {
+  border: 2px solid #778da9;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* Custom Accent Elements */
+.accent-border {
+  border-color: #0d1b2a !important;
+}
+
+.accent-bg {
+  background-color: #0d1b2a !important;
+  color: #e0e1dd !important;
+}
+
+.primary-bg {
+  background-color: #1b263b !important;
+  color: #e0e1dd !important;
+}
+
+.secondary-bg {
+  background-color: #778da9 !important;
+  color: #e0e1dd !important;
+}
+
+.light-bg {
+  background-color: #e0e1dd !important;
+  color: #0d1b2a !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .masthead {
+    padding: 1rem;
+  }
+  
+  .feature__item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .masthead,
+  .page__footer,
+  .sidebar {
+    display: none;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+}
