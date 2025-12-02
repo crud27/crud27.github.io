@@ -39,6 +39,82 @@ feature_row:
     tags: "Machine Learning • Risk Analysis • Python"
 ---
 
+<style>
+/* Custom color palette badges */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.skills-category {
+  background-color: #e0e1dd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #415a77;
+}
+
+.skills-category h3 {
+  color: #1b263b;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Core competencies with icons */
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.competency-card {
+  background-color: #e0e1dd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid #415a77;
+  transition: transform 0.2s;
+}
+
+.competency-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
+}
+
+.competency-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #415a77;
+}
+
+.competency-title {
+  color: #1b263b;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.competency-skills {
+  color: #415a77;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 ## About Me
 
 I'm a **data analyst** and **PMP-certified project manager** with 15+ years of experience leading data-driven initiatives in education and international research. I combine advanced quantitative skills (Python, SQL, machine learning) with full-cycle project management expertise to deliver measurable business value.
@@ -47,11 +123,37 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 ### Core Competencies
 
-- **Data Science & Analytics**: Python (Pandas, NumPy, scikit-learn), SQL, Statistical Analysis
-- **Machine Learning**: Classification, Regression, Predictive Modeling, Feature Engineering
-- **Visualization**: Matplotlib, Seaborn, Tableau, Power BI
-- **Project Management**: PMP Certified, Agile/Scrum (CSM), Full Project Lifecycle
-- **Business Intelligence**: Requirements Gathering, Stakeholder Engagement, Executive Communication
+<div class="competencies-grid">
+  <div class="competency-card">
+    <div class="competency-icon">📊</div>
+    <div class="competency-title">Data Science & Analytics</div>
+    <div class="competency-skills">Python (Pandas, NumPy, scikit-learn), SQL, Statistical Analysis</div>
+  </div>
+  
+  <div class="competency-card">
+    <div class="competency-icon">🤖</div>
+    <div class="competency-title">Machine Learning</div>
+    <div class="competency-skills">Classification, Regression, Predictive Modeling, Feature Engineering</div>
+  </div>
+  
+  <div class="competency-card">
+    <div class="competency-icon">📈</div>
+    <div class="competency-title">Visualization</div>
+    <div class="competency-skills">Matplotlib, Seaborn, Tableau, Power BI</div>
+  </div>
+  
+  <div class="competency-card">
+    <div class="competency-icon">🎯</div>
+    <div class="competency-title">Project Management</div>
+    <div class="competency-skills">PMP Certified, Agile/Scrum (CSM), Full Project Lifecycle</div>
+  </div>
+  
+  <div class="competency-card">
+    <div class="competency-icon">💼</div>
+    <div class="competency-title">Business Intelligence</div>
+    <div class="competency-skills">Requirements Gathering, Stakeholder Engagement, Executive Communication</div>
+  </div>
+</div>
 
 ---
 
@@ -63,25 +165,43 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 ## Technical Skills
 
-### Programming & Analysis
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+<div class="skills-grid">
+  <div class="skills-category">
+    <h3>Programming & Analysis</h3>
+    <div class="badge-container">
+      <img src="https://img.shields.io/badge/Python-415a77?style=for-the-badge&logo=python&logoColor=e0e1dd" alt="Python">
+      <img src="https://img.shields.io/badge/SQL-1b263b?style=for-the-badge&logo=postgresql&logoColor=e0e1dd" alt="SQL">
+      <img src="https://img.shields.io/badge/R-415a77?style=for-the-badge&logo=r&logoColor=e0e1dd" alt="R">
+    </div>
+  </div>
 
-### Machine Learning & Data Science
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+  <div class="skills-category">
+    <h3>Machine Learning & Data Science</h3>
+    <div class="badge-container">
+      <img src="https://img.shields.io/badge/scikit--learn-415a77?style=for-the-badge&logo=scikit-learn&logoColor=e0e1dd" alt="scikit-learn">
+      <img src="https://img.shields.io/badge/Pandas-1b263b?style=for-the-badge&logo=pandas&logoColor=e0e1dd" alt="Pandas">
+      <img src="https://img.shields.io/badge/NumPy-415a77?style=for-the-badge&logo=numpy&logoColor=e0e1dd" alt="NumPy">
+    </div>
+  </div>
 
-### Visualization & BI
-![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=matplotlib&logoColor=white)
+  <div class="skills-category">
+    <h3>Visualization & BI</h3>
+    <div class="badge-container">
+      <img src="https://img.shields.io/badge/Tableau-415a77?style=for-the-badge&logo=tableau&logoColor=e0e1dd" alt="Tableau">
+      <img src="https://img.shields.io/badge/Power_BI-1b263b?style=for-the-badge&logo=powerbi&logoColor=e0e1dd" alt="Power BI">
+      <img src="https://img.shields.io/badge/Matplotlib-415a77?style=for-the-badge&logo=python&logoColor=e0e1dd" alt="Matplotlib">
+    </div>
+  </div>
 
-### Tools & Platforms
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+  <div class="skills-category">
+    <h3>Tools & Platforms</h3>
+    <div class="badge-container">
+      <img src="https://img.shields.io/badge/Jupyter-415a77?style=for-the-badge&logo=jupyter&logoColor=e0e1dd" alt="Jupyter">
+      <img src="https://img.shields.io/badge/Git-1b263b?style=for-the-badge&logo=git&logoColor=e0e1dd" alt="Git">
+      <img src="https://img.shields.io/badge/Excel-415a77?style=for-the-badge&logo=microsoft-excel&logoColor=e0e1dd" alt="Excel">
+    </div>
+  </div>
+</div>
 
 ---
 
