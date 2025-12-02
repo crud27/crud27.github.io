@@ -68,11 +68,11 @@ feature_row:
   gap: 0.5rem;
 }
 
-/* Core competencies with icons */
+/* Core competencies - SMALLER to match technical skills */
 .competencies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   margin: 2rem 0;
 }
 
@@ -80,7 +80,7 @@ feature_row:
   background-color: #e0e1dd;
   padding: 1.5rem;
   border-radius: 8px;
-  border-top: 3px solid #415a77;
+  border-left: 4px solid #415a77;
   transition: transform 0.2s;
 }
 
@@ -90,7 +90,7 @@ feature_row:
 }
 
 .competency-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #415a77;
 }
@@ -99,16 +99,16 @@ feature_row:
   color: #1b263b;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .competency-skills {
   color: #415a77;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
-/* Education cards with logos - SMALLER */
+/* Education cards with logos */
 .education-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -162,51 +162,56 @@ feature_row:
   font-style: italic;
 }
 
-/* Certifications in 2x3 grid */
+/* Certifications in 2x3 grid - SMALLER to match technical skills */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   margin: 2rem 0;
 }
 
 .cert-item {
   background-color: #e0e1dd;
-  padding: 1rem 1.25rem;
+  padding: 1.5rem;
   border-radius: 8px;
-  border-left: 3px solid #415a77;
+  border-left: 4px solid #415a77;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
   transition: all 0.2s;
 }
 
 .cert-item:hover {
-  background-color: #778da9;
-  transform: translateX(5px);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
+}
+
+.cert-content {
+  flex-grow: 1;
 }
 
 .cert-name {
   color: #1b263b;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
 }
 
 .cert-issuer {
   color: #415a77;
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
+  font-size: 0.85rem;
 }
 
 .cert-link {
   background-color: #415a77;
   color: #e0e1dd;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   transition: background-color 0.2s;
-  white-space: nowrap;
+  text-align: center;
+  display: block;
 }
 
 .cert-link:hover {
@@ -216,10 +221,8 @@ feature_row:
 }
 
 @media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  
+  .skills-grid,
+  .competencies-grid,
   .certifications-grid {
     grid-template-columns: 1fr;
   }
@@ -232,12 +235,6 @@ feature_row:
   .education-logo {
     width: 50px;
     height: 50px;
-  }
-  
-  .cert-item {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
   }
 }
 </style>
@@ -338,7 +335,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 <div class="education-grid">
   <div class="education-card">
-    <img src= "assets/images/MIT_Logo.png" alt="MIT Logo" class="education-logo">
+    <img src="assets/images/MIT_Logo.png" alt="MIT Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Applied Data Science & Machine Learning</div>
       <div class="education-school">Massachusetts Institute of Technology</div>
@@ -347,7 +344,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src= "assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
+    <img src="assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Ph.D. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -356,7 +353,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src= "assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
+    <img src="assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">M.S. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -365,7 +362,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src= "assets/images/NCSU_Logo.png" alt="NC State Logo" class="education-logo">
+    <img src="assets/images/NCSU_Logo.png" alt="NC State Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">B.S. Applied Mathematics</div>
       <div class="education-school">North Carolina State University</div>
@@ -378,51 +375,51 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 <div class="certifications-grid">
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">Project Management Professional (PMP)</div>
       <div class="cert-issuer">Project Management Institute</div>
     </div>
-    <a href="/assets/documents/certificates/PMP_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/PMP_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">Certified Scrum Master (CSM)</div>
       <div class="cert-issuer">Scrum Alliance</div>
     </div>
-    <a href="/assets/documents/certificates/CSM_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/CSM_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">Applied Data Science & ML Certificate</div>
       <div class="cert-issuer">Massachusetts Institute of Technology</div>
     </div>
-    <a href="/assets/documents/certificates/MIT_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/MIT_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">Google Data Analytics Professional</div>
       <div class="cert-issuer">Google</div>
     </div>
-    <a href="/assets/documents/certificates/Google_Data_Analytics_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/Google_Data_Analytics_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">IBM Data Science Fundamentals</div>
       <div class="cert-issuer">IBM</div>
     </div>
-    <a href="/assets/documents/certificates/IBM_Data_Science_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/IBM_Data_Science_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 
   <div class="cert-item">
-    <div>
+    <div class="cert-content">
       <div class="cert-name">SQL Basics for Data Science</div>
       <div class="cert-issuer">UC Davis</div>
     </div>
-    <a href="/assets/documents/certificates/SQL_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
+    <a href="/assets/documents/certificates/SQL_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
   </div>
 </div>
 
