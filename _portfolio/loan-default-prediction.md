@@ -4,7 +4,7 @@ excerpt: "Built Random Forest classification model achieving 80% recall to predi
 header:
   teaser: /assets/images/loan-thumb.png
   overlay_image: /assets/images/loan-header.png
-  overlay_filter: 0.5
+  overlay_filter: 0.75
 sidebar:
   - title: "Role"
     text: "Data Scientist"
