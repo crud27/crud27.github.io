@@ -37,6 +37,31 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "View Project"
     tags: "Machine Learning • Risk Analysis • Python"
+publications_row:
+  - image_path: /assets/images/survey-thumb.png
+    alt: "Survey Analysis"
+    title: "Survey Analysis: Upper Primary Mathematics Teaching"
+    excerpt: "Research paper disseminating the results and findings of 120 teachers teaching mathematics in English to upper primary students in Ghana."
+    url: "/publications/survey-analysis/"
+    btn_class: "btn--primary"
+    btn_label: "View Publication"
+    tags: "Survey Design • Data Analysis • Statistical Reporting"
+  - image_path: /assets/images/rti-thumb.png
+    alt: "RTI White Paper"
+    title: "Five-Country Mathematics Survey"
+    excerpt: "Commissioned white paper for RTI International exploring numeracy teaching and learning in upper primary grades (four to eight) in Kenya, Tanzania, Uganda, Indonesia, and Pakistan."
+    url: "/publications/rti-whitepaper/"
+    btn_class: "btn--primary"
+    btn_label: "View Publication"
+    tags: "International Research • Comparative Analysis • Education Policy"
+  - image_path: /assets/images/academic-thumb.png
+    alt: "Academic Research"
+    title: "Peer-Reviewed Academic Publications"
+    excerpt: "Two peer-reviewed mathematics research papers published in MDPI journals demonstrating advanced analytical and research capabilities."
+    url: "/publications/academic-papers/"
+    btn_class: "btn--primary"
+    btn_label: "View Publications"
+    tags: "Academic Research • Mathematical Analysis • Peer-Reviewed"
 ---
 
 <style>
@@ -106,72 +131,6 @@ feature_row:
   color: #415a77;
   font-size: 0.85rem;
   line-height: 1.5;
-}
-
-/* Publications section - similar to education cards */
-.publications-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.publication-card {
-  background-color: #e0e1dd;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  border-left: 4px solid #415a77;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  transition: transform 0.2s;
-}
-
-.publication-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
-}
-
-.publication-icon {
-  font-size: 2.5rem;
-  color: #415a77;
-  flex-shrink: 0;
-}
-
-.publication-content {
-  flex-grow: 1;
-}
-
-.publication-title {
-  color: #1b263b;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
-}
-
-.publication-description {
-  color: #415a77;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.publication-link {
-  background-color: #415a77;
-  color: #e0e1dd;
-  padding: 0.4rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: background-color 0.2s;
-  display: inline-block;
-  margin-top: 0.5rem;
-}
-
-.publication-link:hover {
-  background-color: #1b263b;
-  color: #e0e1dd;
-  text-decoration: none;
 }
 
 /* Education cards with logos */
@@ -293,8 +252,7 @@ feature_row:
     grid-template-columns: 1fr;
   }
   
-  .education-card,
-  .publication-card {
+  .education-card {
     flex-direction: column;
     text-align: center;
   }
@@ -362,36 +320,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 ## Research & Publications
 
-<div class="publications-grid">
-  <div class="publication-card">
-    <div class="publication-icon">📊</div>
-    <div class="publication-content">
-      <div class="publication-title">Survey Analysis Report: Upper Primary Report</div>
-      <div class="publication-description">The study explores mathematics teaching in English by Ghanaian upper primary teachers. One hundred and twenty-one teachers participated in piloting the survey of 50 questions, consisting of three types of questions: closed, free response, and problem solving.</div>
-      <a href="/assets/documents/publications/Survey_Analysis_Report_F.pdf" class="publication-link" target="_blank">View Report 📄</a>
-    </div>
-  </div>
-
-  <div class="publication-card">
-    <div class="publication-icon">📑</div>
-    <div class="publication-content">
-      <div class="publication-title">Survey of Existing Grades Four to Eight Mathematics in Five Countries</div>
-      <div class="publication-description">Commissioned white paper for RTI International. The purpose of the research conducted for this survey was to explore numeracy teaching and learning in the upper primary grades (four to eight) in five countries: Kenya, Tanzania, Uganda, Indonesia and Pakistan.</div>
-      <a href="/assets/documents/publications/5_Country_Survey_F.pdf" class="publication-link" target="_blank">View White Paper 📄</a>
-    </div>
-  </div>
-
-  <div class="publication-card">
-    <div class="publication-icon">🎓</div>
-    <div class="publication-content">
-      <div class="publication-title">Academic Journal Publications (2023)</div>
-      <div class="publication-description">Two peer-reviewed mathematics research papers published in MDPI journals demonstrating advanced analytical and research capabilities.</div>
-      <a href="/assets/documents/publications/Studying_Harmonic_Fcn_2023.pdf" class="publication-link" target="_blank" style="margin-right: 0.5rem;">Harmonic Functions Study 📄</a>
-      <a href="/assets/documents/publications/BiUnivalent_Fcn_qPascal_Dist_2023.pdf" class="publication-link" target="_blank">BiUnivalent Functions & q-Pascal Distribution 📄</a>
-      <div style="margin-top: 0.5rem;"> </div>
-    </div>
-  </div>
-</div>
+{% include feature_row id="publications_row" %}
 
 ---
 
