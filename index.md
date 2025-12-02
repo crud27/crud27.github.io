@@ -108,9 +108,132 @@ feature_row:
   line-height: 1.6;
 }
 
+/* Education cards with logos */
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.education-card {
+  background-color: #e0e1dd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #415a77;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.education-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
+}
+
+.education-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.education-content {
+  flex-grow: 1;
+}
+
+.education-degree {
+  color: #1b263b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.education-school {
+  color: #415a77;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.education-details {
+  color: #778da9;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Certifications with clickable links */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.cert-item {
+  background-color: #e0e1dd;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #415a77;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.cert-item:hover {
+  background-color: #778da9;
+  transform: translateX(5px);
+}
+
+.cert-name {
+  color: #1b263b;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cert-issuer {
+  color: #415a77;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.cert-link {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.cert-link:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .education-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .cert-item {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }
 </style>
@@ -208,17 +331,96 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 ## Education & Certifications
 
 ### Education
-- **Applied Data Science & Machine Learning** - Massachusetts Institute of Technology (2023)
-- **Ph.D. Mathematics Education** - Florida State University (2006)
-- **M.S. Mathematics Education** (18+ graduate credits in Applied Mathematics & Statistics) - Florida State University (2003)
-- **B.S. Applied Mathematics** - North Carolina State University (2001)
+
+<div class="education-grid">
+  <div class="education-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/240px-MIT_logo.svg.png" alt="MIT Logo" class="education-logo">
+    <div class="education-content">
+      <div class="education-degree">Applied Data Science & Machine Learning</div>
+      <div class="education-school">Massachusetts Institute of Technology</div>
+      <div class="education-details">Professional Certificate Program</div>
+    </div>
+  </div>
+
+  <div class="education-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Florida_State_University_seal.svg/240px-Florida_State_University_seal.svg.png" alt="FSU Logo" class="education-logo">
+    <div class="education-content">
+      <div class="education-degree">Ph.D. Mathematics Education</div>
+      <div class="education-school">Florida State University</div>
+      <div class="education-details">Doctoral Degree</div>
+    </div>
+  </div>
+
+  <div class="education-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Florida_State_University_seal.svg/240px-Florida_State_University_seal.svg.png" alt="FSU Logo" class="education-logo">
+    <div class="education-content">
+      <div class="education-degree">M.S. Mathematics Education</div>
+      <div class="education-school">Florida State University</div>
+      <div class="education-details">18+ graduate credits in Applied Mathematics & Statistics</div>
+    </div>
+  </div>
+
+  <div class="education-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/North_Carolina_State_University_seal.svg/240px-North_Carolina_State_University_seal.svg.png" alt="NC State Logo" class="education-logo">
+    <div class="education-content">
+      <div class="education-degree">B.S. Applied Mathematics</div>
+      <div class="education-school">North Carolina State University</div>
+      <div class="education-details">Bachelor of Science</div>
+    </div>
+  </div>
+</div>
 
 ### Professional Certifications
-- **Project Management Professional (PMP)** - Project Management Institute
-- **Certified Scrum Master (CSM)** - Scrum Alliance
-- **Google Data Analytics Professional Certificate** - Google
-- **IBM Data Science Fundamentals with Python and SQL** - IBM
-- **SQL Basics for Data Science Specialization** - UC Davis
+
+<div class="certifications-grid">
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">Project Management Professional (PMP)</div>
+      <div class="cert-issuer">Project Management Institute</div>
+    </div>
+    <a href="/assets/documents/certificates/PMP_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">Certified Scrum Master (CSM)</div>
+      <div class="cert-issuer">Scrum Alliance</div>
+    </div>
+    <a href="/assets/documents/certificates/CSM_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">Applied Data Science & ML Certificate</div>
+      <div class="cert-issuer">Massachusetts Institute of Technology</div>
+    </div>
+    <a href="/assets/documents/certificates/MIT_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">Google Data Analytics Professional</div>
+      <div class="cert-issuer">Google</div>
+    </div>
+    <a href="/assets/documents/certificates/Google_Data_Analytics_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">IBM Data Science Fundamentals</div>
+      <div class="cert-issuer">IBM</div>
+    </div>
+    <a href="/assets/documents/certificates/IBM_Data_Science_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+
+  <div class="cert-item">
+    <div>
+      <div class="cert-name">SQL Basics for Data Science</div>
+      <div class="cert-issuer">UC Davis</div>
+    </div>
+    <a href="/assets/documents/certificates/SQL_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+  </div>
+</div>
 
 ---
 
