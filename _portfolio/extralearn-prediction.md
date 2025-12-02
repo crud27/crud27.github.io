@@ -3,8 +3,8 @@ title: "ExtraaLearn: Customer Conversion Prediction Model"
 excerpt: "Built machine learning models achieving 85% recall to predict lead conversion for an EdTech startup, identifying key factors driving customer acquisition and optimizing sales resource allocation."
 header:
   teaser: /assets/images/extralearn-thumb.png
-  # overlay_image: /assets/images/extralearn-header.png
-  # overlay_filter: 0.5
+  overlay_image: /assets/images/extralearn-header.png
+  overlay_filter: 0.5
    # caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 sidebar:
   - title: "Role"
