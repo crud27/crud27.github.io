@@ -3,8 +3,8 @@ title: "Loan Default Risk Prediction: Banking Risk Assessment"
 excerpt: "Built Random Forest classification model achieving 80% recall to predict loan default risk for a banking institution, identifying critical risk factors and providing data-driven lending recommendations."
 header:
   teaser: /assets/images/loan-thumb.png
-  overlay_image: /assets/images/loan-header.png
-  overlay_filter: 0.75
+  overlay_image: /assets/images/header.png
+  overlay_filter: 0.5
 sidebar:
   - title: "Role"
     text: "Data Scientist"

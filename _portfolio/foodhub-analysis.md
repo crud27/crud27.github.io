@@ -3,7 +3,7 @@ title: "FoodHub Business Analysis: Optimizing Food Delivery Operations"
 excerpt: "Analyzed 1,800+ orders to identify revenue opportunities and operational improvements, resulting in recommendations projected to increase revenue by $1.2M annually."
 header:
   teaser: /assets/images/foodhub-thumb.png
-  overlay_image: /assets/images/foodhub-header.png
+  overlay_image: /assets/images/header.png
   overlay_filter: 0.5
 sidebar:
   - title: "Role"
