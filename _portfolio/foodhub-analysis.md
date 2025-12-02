@@ -374,7 +374,7 @@ t_stat, p_value = stats.ttest_ind(weekend_orders, weekday_orders)
 |----------|-------------|
 | 📊 [**Interactive Analysis (HTML)**](/food_hub.html) | Complete exploratory analysis with all visualizations |
 | 📓 [**Jupyter Notebook**](/Foodhub_Project_FullCode_corrected.ipynb) | Full Python code with detailed comments |
-| 📑 [**Executive Presentation**](/pdf/FoodHub%20Data%20Analysis%20and%20Recommendations.pdf) | 12-slide deck with key findings and recommendations |
+| 📑 [**Executive Presentation**](/assets/documents/FoodHub_DA_and_Recom.pdf) | 12-slide deck with key findings and recommendations |
 
 ---
 
