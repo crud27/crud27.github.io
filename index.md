@@ -367,7 +367,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
     <div class="publication-icon">📊</div>
     <div class="publication-content">
       <div class="publication-title">Survey Analysis Report: Upper Primary Report</div>
-      <div class="publication-description">The study explores mathematics teaching in English by Ghanaian upper primary teachers. One hundred and twenty-one teachers participated in piloting the survey of 50 questions, consisting of three types of questions: closed, free response, and problem solving. The purpose of the study was to investigate: 1. What are teacher beliefs regarding the nature of mathematics? 2. What is their pedagogical knowledge of teaching English learners? 3. What are their beliefs regarding teaching math to English learners?</div>
+      <div class="publication-description">The study explores mathematics teaching in English by Ghanaian upper primary teachers. One hundred and twenty-one teachers participated in piloting the survey of 50 questions, consisting of three types of questions: closed, free response, and problem solving.</div>
       <a href="/assets/documents/publications/Survey_Analysis_Report_F.pdf" class="publication-link" target="_blank">View Report 📄</a>
     </div>
   </div>
@@ -376,7 +376,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
     <div class="publication-icon">📑</div>
     <div class="publication-content">
       <div class="publication-title">Survey of Existing Grades Four to Eight Mathematics in Five Countries</div>
-      <div class="publication-description">Commissioned white paper for RTI International. The purpose of the research conducted for this survey was to explore numeracy teaching and learning in the upper primary grades (four to eight) in five countries: Kenya, Tanzania, Uganda, Indonesia and Pakistan. The research was conducted by evaluating the information available for each country such as, but not limited to, textbooks, curriculum documents, previous research articles which analyzed and documented findings on teachers' behavior, teaching methods, students' results on previous assessments and last, educational ministries' future goals and expectations.</div>
+      <div class="publication-description">Commissioned white paper for RTI International. The purpose of the research conducted for this survey was to explore numeracy teaching and learning in the upper primary grades (four to eight) in five countries: Kenya, Tanzania, Uganda, Indonesia and Pakistan.</div>
       <a href="/assets/documents/publications/5_Country_Survey_F.pdf" class="publication-link" target="_blank">View White Paper 📄</a>
     </div>
   </div>
@@ -386,12 +386,9 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
     <div class="publication-content">
       <div class="publication-title">Academic Journal Publications (2023)</div>
       <div class="publication-description">Two peer-reviewed mathematics research papers published in MDPI journals demonstrating advanced analytical and research capabilities.</div>
-      <a href="https://www.mdpi.com/2227-7390/11/10/2220" class="publication-link" target="_blank" style="margin-right: 0.5rem;">Harmonic Functions Study 📄</a>
-      <a href="https://www.mdpi.com/2073-8994/15/5/1109" class="publication-link" target="_blank">BiUnivalent Functions & q-Pascal Distribution 📄</a>
-      <div style="margin-top: 0.5rem;">
-        <a href="/assets/documents/publications/Studying_Harmonic_Fcn_2023.pdf" class="publication-link" target="_blank" style="margin-right: 0.5rem; font-size: 0.8rem;">Download PDF 1 📥</a>
-        <a href="/assets/documents/publications/BiUnivalent_Fcn_qPascal_Dist_2023.pdf" class="publication-link" target="_blank" style="font-size: 0.8rem;">Download PDF 2 📥</a>
-      </div>
+      <a href="/assets/documents/publications/Studying_Harmonic_Fcn_2023.pdf" class="publication-link" target="_blank" style="margin-right: 0.5rem;">Harmonic Functions Study 📄</a>
+      <a href="/assets/documents/publications/BiUnivalent_Fcn_qPascal_Dist_2023.pdf" class="publication-link" target="_blank">BiUnivalent Functions & q-Pascal Distribution 📄</a>
+      <div style="margin-top: 0.5rem;"> </div>
     </div>
   </div>
 </div>
