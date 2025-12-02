@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: home
 author_profile: true
 header:
   overlay_color: "#5e616c"
@@ -63,6 +63,14 @@ publications_row:
     btn_label: "View Publications"
     tags: "Academic Research • Mathematical Analysis • Peer-Reviewed"
 ---
+
+<style>
+/* Hide Recent Posts section */
+.page__content > h2:last-of-type,
+.entries-list {
+  display: none !important;
+}
+</style>
 
 <style>
 /* Custom color palette badges */
