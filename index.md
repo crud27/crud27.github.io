@@ -68,7 +68,7 @@ feature_row:
   gap: 0.5rem;
 }
 
-/* Core competencies - SMALLER to match technical skills */
+/* Core competencies - 2x3 grid */
 .competencies-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -106,6 +106,72 @@ feature_row:
   color: #415a77;
   font-size: 0.85rem;
   line-height: 1.5;
+}
+
+/* Publications section - similar to education cards */
+.publications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.publication-card {
+  background-color: #e0e1dd;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid #415a77;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.publication-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.2);
+}
+
+.publication-icon {
+  font-size: 2.5rem;
+  color: #415a77;
+  flex-shrink: 0;
+}
+
+.publication-content {
+  flex-grow: 1;
+}
+
+.publication-title {
+  color: #1b263b;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.publication-description {
+  color: #415a77;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.publication-link {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.publication-link:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
 }
 
 /* Education cards with logos */
@@ -162,7 +228,7 @@ feature_row:
   font-style: italic;
 }
 
-/* Certifications in 2x3 grid - SMALLER to match technical skills */
+/* Certifications in 2x3 grid */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -227,7 +293,8 @@ feature_row:
     grid-template-columns: 1fr;
   }
   
-  .education-card {
+  .education-card,
+  .publication-card {
     flex-direction: column;
     text-align: center;
   }
@@ -262,7 +329,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   
   <div class="competency-card">
     <div class="competency-icon">📈</div>
-    <div class="competency-title">Visualization</div>
+    <div class="competency-title">Data Visualization</div>
     <div class="competency-skills">Matplotlib, Seaborn, Tableau, Power BI</div>
   </div>
   
@@ -270,6 +337,12 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
     <div class="competency-icon">🎯</div>
     <div class="competency-title">Project Management</div>
     <div class="competency-skills">PMP Certified, Agile/Scrum (CSM), Full Project Lifecycle</div>
+  </div>
+  
+  <div class="competency-card">
+    <div class="competency-icon">👥</div>
+    <div class="competency-title">Leadership & Team Management</div>
+    <div class="competency-skills">Cross-functional teams, Mentoring, Stakeholder alignment, Change management</div>
   </div>
   
   <div class="competency-card">
@@ -284,6 +357,44 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 ## Featured Projects
 
 {% include feature_row %}
+
+---
+
+## Research & Publications
+
+<div class="publications-grid">
+  <div class="publication-card">
+    <div class="publication-icon">📊</div>
+    <div class="publication-content">
+      <div class="publication-title">Survey Analysis Report: Upper Primary Report</div>
+      <div class="publication-description">The study explores mathematics teaching in English by Ghanaian upper primary teachers. One hundred and twenty-one teachers participated in piloting the survey of 50 questions, consisting of three types of questions: closed, free response, and problem solving. The purpose of the study was to investigate: 1. What are teacher beliefs regarding the nature of mathematics? 2. What is their pedagogical knowledge of teaching English learners? 3. What are their beliefs regarding teaching math to English learners?</div>
+      <a href="/assets/documents/publications/Survey_Analysis_Report_F.pdf" class="publication-link" target="_blank">View Report 📄</a>
+    </div>
+  </div>
+
+  <div class="publication-card">
+    <div class="publication-icon">📑</div>
+    <div class="publication-content">
+      <div class="publication-title">Survey of Existing Grades Four to Eight Mathematics in Five Countries</div>
+      <div class="publication-description">Commissioned white paper for RTI International. The purpose of the research conducted for this survey was to explore numeracy teaching and learning in the upper primary grades (four to eight) in five countries: Kenya, Tanzania, Uganda, Indonesia and Pakistan. The research was conducted by evaluating the information available for each country such as, but not limited to, textbooks, curriculum documents, previous research articles which analyzed and documented findings on teachers' behavior, teaching methods, students' results on previous assessments and last, educational ministries' future goals and expectations.</div>
+      <a href="/assets/documents/publications/5_Country_Survey_F.pdf" class="publication-link" target="_blank">View White Paper 📄</a>
+    </div>
+  </div>
+
+  <div class="publication-card">
+    <div class="publication-icon">🎓</div>
+    <div class="publication-content">
+      <div class="publication-title">Academic Journal Publications (2023)</div>
+      <div class="publication-description">Two peer-reviewed mathematics research papers published in MDPI journals demonstrating advanced analytical and research capabilities.</div>
+      <a href="https://www.mdpi.com/2227-7390/11/10/2220" class="publication-link" target="_blank" style="margin-right: 0.5rem;">Harmonic Functions Study 📄</a>
+      <a href="https://www.mdpi.com/2073-8994/15/5/1109" class="publication-link" target="_blank">BiUnivalent Functions & q-Pascal Distribution 📄</a>
+      <div style="margin-top: 0.5rem;">
+        <a href="/assets/documents/publications/Studying_Harmonic_Fcn_2023.pdf" class="publication-link" target="_blank" style="margin-right: 0.5rem; font-size: 0.8rem;">Download PDF 1 📥</a>
+        <a href="/assets/documents/publications/BiUnivalent_Fcn_qPascal_Dist_2023.pdf" class="publication-link" target="_blank" style="font-size: 0.8rem;">Download PDF 2 📥</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
