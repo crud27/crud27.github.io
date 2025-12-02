@@ -108,22 +108,22 @@ feature_row:
   line-height: 1.6;
 }
 
-/* Education cards with logos */
+/* Education cards with logos - SMALLER */
 .education-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 2rem 0;
 }
 
 .education-card {
   background-color: #e0e1dd;
-  padding: 1.5rem;
+  padding: 1rem 1.25rem;
   border-radius: 8px;
   border-left: 4px solid #415a77;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   transition: transform 0.2s;
 }
 
@@ -133,8 +133,8 @@ feature_row:
 }
 
 .education-logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -146,33 +146,33 @@ feature_row:
 .education-degree {
   color: #1b263b;
   font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .education-school {
   color: #415a77;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
 }
 
 .education-details {
   color: #778da9;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-style: italic;
 }
 
-/* Certifications with clickable links */
+/* Certifications in 2x3 grid */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 2rem 0;
 }
 
 .cert-item {
   background-color: #e0e1dd;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-radius: 8px;
   border-left: 3px solid #415a77;
   display: flex;
@@ -189,22 +189,22 @@ feature_row:
 .cert-name {
   color: #1b263b;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .cert-issuer {
   color: #415a77;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-top: 0.2rem;
 }
 
 .cert-link {
   background-color: #415a77;
   color: #e0e1dd;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   transition: background-color 0.2s;
   white-space: nowrap;
 }
@@ -220,19 +220,23 @@ feature_row:
     grid-template-columns: 1fr;
   }
   
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .education-card {
     flex-direction: column;
     text-align: center;
   }
   
   .education-logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
   
   .cert-item {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
     text-align: center;
   }
 }
@@ -334,7 +338,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 <div class="education-grid">
   <div class="education-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/240px-MIT_logo.svg.png" alt="MIT Logo" class="education-logo">
+    <img src="https://logos-world.net/wp-content/uploads/2021/10/MIT-Logo.png" alt="MIT Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Applied Data Science & Machine Learning</div>
       <div class="education-school">Massachusetts Institute of Technology</div>
@@ -343,7 +347,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Florida_State_University_seal.svg/240px-Florida_State_University_seal.svg.png" alt="FSU Logo" class="education-logo">
+    <img src="https://1000logos.net/wp-content/uploads/2022/08/Florida-State-University-Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Ph.D. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -352,7 +356,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Florida_State_University_seal.svg/240px-Florida_State_University_seal.svg.png" alt="FSU Logo" class="education-logo">
+    <img src="https://1000logos.net/wp-content/uploads/2022/08/Florida-State-University-Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">M.S. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -361,7 +365,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/North_Carolina_State_University_seal.svg/240px-North_Carolina_State_University_seal.svg.png" alt="NC State Logo" class="education-logo">
+    <img src="https://1000logos.net/wp-content/uploads/2022/11/NC-State-Wolfpack-Logo.png" alt="NC State Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">B.S. Applied Mathematics</div>
       <div class="education-school">North Carolina State University</div>
@@ -378,7 +382,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">Project Management Professional (PMP)</div>
       <div class="cert-issuer">Project Management Institute</div>
     </div>
-    <a href="/assets/documents/certificates/PMP_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/PMP_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 
   <div class="cert-item">
@@ -386,7 +390,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">Certified Scrum Master (CSM)</div>
       <div class="cert-issuer">Scrum Alliance</div>
     </div>
-    <a href="/assets/documents/certificates/CSM_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/CSM_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 
   <div class="cert-item">
@@ -394,7 +398,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">Applied Data Science & ML Certificate</div>
       <div class="cert-issuer">Massachusetts Institute of Technology</div>
     </div>
-    <a href="/assets/documents/certificates/MIT_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/MIT_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 
   <div class="cert-item">
@@ -402,7 +406,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">Google Data Analytics Professional</div>
       <div class="cert-issuer">Google</div>
     </div>
-    <a href="/assets/documents/certificates/Google_Data_Analytics_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/Google_Data_Analytics_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 
   <div class="cert-item">
@@ -410,7 +414,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">IBM Data Science Fundamentals</div>
       <div class="cert-issuer">IBM</div>
     </div>
-    <a href="/assets/documents/certificates/IBM_Data_Science_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/IBM_Data_Science_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 
   <div class="cert-item">
@@ -418,7 +422,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
       <div class="cert-name">SQL Basics for Data Science</div>
       <div class="cert-issuer">UC Davis</div>
     </div>
-    <a href="/assets/documents/certificates/SQL_Certificate.pdf" class="cert-link" target="_blank">View Certificate 📄</a>
+    <a href="/assets/documents/certificates/SQL_Certificate.pdf" class="cert-link" target="_blank">View 📄</a>
   </div>
 </div>
 
