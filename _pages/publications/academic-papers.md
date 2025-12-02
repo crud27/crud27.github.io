@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Peer-Reviewed Academic Publications"
+permalink: /publications/academic-papers/
 excerpt: "Two peer-reviewed mathematics research papers published in MDPI journals demonstrating advanced analytical and research capabilities"
 header:
   overlay_color: "#415a77"

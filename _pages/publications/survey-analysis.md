@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Survey Analysis: Upper Primary Mathematics Teaching"
+permalink: /publications/survey-analysis/
 excerpt: "Research paper disseminating the results and findings of 120 teachers teaching mathematics in English to upper primary students in Ghana"
 header:
   overlay_color: "#415a77"

@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Five-Country Mathematics Survey"
+permalink: /publications/rti-whitepaper/
 excerpt: "Commissioned white paper for RTI International exploring numeracy teaching and learning in Kenya, Tanzania, Uganda, Indonesia, and Pakistan"
 header:
   overlay_color: "#415a77"
