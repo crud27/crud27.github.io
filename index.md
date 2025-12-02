@@ -338,7 +338,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
 
 <div class="education-grid">
   <div class="education-card">
-    <img src="https://logos-world.net/wp-content/uploads/2021/10/MIT-Logo.png" alt="MIT Logo" class="education-logo">
+    <img src= "assets/images/MIT_Logo.png" alt="MIT Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Applied Data Science & Machine Learning</div>
       <div class="education-school">Massachusetts Institute of Technology</div>
@@ -347,7 +347,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://1000logos.net/wp-content/uploads/2022/08/Florida-State-University-Logo.png" alt="FSU Logo" class="education-logo">
+    <img src= "assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">Ph.D. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -356,7 +356,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://1000logos.net/wp-content/uploads/2022/08/Florida-State-University-Logo.png" alt="FSU Logo" class="education-logo">
+    <img src= "assets/images/FSU_Logo.png" alt="FSU Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">M.S. Mathematics Education</div>
       <div class="education-school">Florida State University</div>
@@ -365,7 +365,7 @@ Recently completed MIT's **Applied Data Science and Machine Learning** certifica
   </div>
 
   <div class="education-card">
-    <img src="https://1000logos.net/wp-content/uploads/2022/11/NC-State-Wolfpack-Logo.png" alt="NC State Logo" class="education-logo">
+    <img src= "assets/images/NCSU_Logo.png" alt="NC State Logo" class="education-logo">
     <div class="education-content">
       <div class="education-degree">B.S. Applied Mathematics</div>
       <div class="education-school">North Carolina State University</div>
