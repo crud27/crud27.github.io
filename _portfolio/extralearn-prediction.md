@@ -5,6 +5,7 @@ header:
   teaser: /assets/images/extralearn-thumb.png
   overlay_image: /assets/images/extralearn-header.png
   overlay_filter: 0.5
+   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 sidebar:
   - title: "Role"
     text: "Data Scientist"
